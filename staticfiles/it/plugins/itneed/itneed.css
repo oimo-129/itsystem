@@ -1,0 +1,49 @@
+body{margin: 0;padding: 0;font-family:  "Microsoft YaHei",Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", sans-serif;}
+/*header-top start*/
+/*.header-top { width:100%; height:32px; background:url(//image1.askci.com/s_dataimages/images/data-icon-2017-11-09000000015.png); margin:0 auto;}*/
+.header1{width: 100%;height: 32px;background-color:hsl(221, 89%,41%); margin:0 auto;}
+.header-top {  height:32px; margin:0 auto;}
+.header-top-left { height:32px;}
+.header-top-left a { float:left; font-size:15px; width:90px; line-height:32px; color:#eee; display:block;margin-right: 10px;}
+.header-top-left a img { width:30px; height:30px; padding:6px 0 0 8px; display:block;}
+.header-top-left a span { float: left;padding-left:5px; padding-top: 2px; }
+.header-top-left a:hover {background:#d85500;}
+/* .header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center; background:url(https://image1.askci.com/s_dataimages/images/data-icon-2017-11-0900000008.png
+) no-repeat right; padding:0 8px;} */
+.header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center;padding:0px 10px;padding-right:30px;}
+
+.header-top-right a span { color: #FFFFFF;float: right;}
+.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 2px;}
+.header-top-right a:hover { color:#ede5e5;}
+.code_box{position: absolute;top: 28px;left: -14px;width: 100px;height: 100px;z-index: 99999999;}
+.header-top-left .code_box img{width: 100%;height: 100%;}
+/*header-top end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

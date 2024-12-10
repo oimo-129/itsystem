@@ -1,0 +1,75 @@
+{% extends "admin/base.html" %}  
+{% load static %}  
+
+{% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | 家电一院情报系统后台{% endblock %}  
+
+{% block extrastyle %}  
+<style>  
+    /* 头部样式 */  
+    #header {  
+        background: #1d3dbb;  
+        color: #fff;  
+        height: 50px;  
+        line-height: 50px;  
+    }  
+    
+    /* 网站标题样式 */  
+    #site-name {  
+        font-size: 24px;  
+        font-weight: bold;  
+    }  
+    
+    #site-name a {  
+        color: #fff !important;  
+    }  
+    
+    /* 导航菜单样式 */  
+    .module h2, .module caption, .inline-group h2 {  
+        background: #1d3dbb;  
+        color: #fff;  
+        padding: 8px;  
+        font-size: 14px;  
+    }  
+    
+    /* 按钮样式 */  
+    .submit-row input {  
+        background: #1d3dbb;  
+        color: #fff;  
+    }  
+    
+    /* 链接样式 */  
+    a:link, a:visited {  
+        color: #1d3dbb;  
+    }  
+    
+    /* 表格头部样式 */  
+    thead th {  
+        background: #f8f9fa;  
+    }  
+    
+    /* 列表页面过滤器样式 */  
+    .filtered .results {  
+        background: #fff;  
+    }  
+    
+    /* 登录页面样式 */  
+    .login #header {  
+        height: auto;  
+        padding: 15px;  
+    }  
+    
+    .login #content {  
+        padding: 20px;  
+    }  
+</style>  
+{% endblock %}  
+
+{% block branding %}  
+<h1 id="site-name">  
+    <a href="{% url 'admin:index' %}">  
+        <img src="{% static 'it/img/gree.ico' %}" height="30px" style="margin-right: 10px;">  
+        家电一院情报系统后台  
+    </a>  
+</h1>  
+{% endblock %}  
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,407 @@
+{% extends 'base.html' %}
+{% block title  %} 情报系统首页 {% endblock %}
+{%  load static %}
+
+
+
+{% block custom %}
+
+{% endblock %}
+
+{% block content %}
+    <!-- 搜索栏 -->
+
+    <!-- 学它的布局，将它的布局重新编排 -->
+    <div class="nav bg-cover " id="nav1">
+
+
+        <div class="nav_inbox">
+            <!--
+            <a href="{% url 'home' %}">
+                <img class="logo" src="{% static 'it/img/gree.ico' %}" alt="">
+            </a>
+            -->
+
+
+            <div class="col-lg-8 text-center mx-auto">
+                <h2 style="margin-top: 20px; margin-left: 15px; color: white;">格力家电一院情报系统</h2>
+
+                <div class="position-relative" id="search_div">
+
+                    <div class="row">
+
+
+                        <div>
+                            <img src="{% static 'it/images/fire.svg' %}" id="fire_img">
+                            <span style="color:white;">热门：</span>
+                        </div>
+
+                        <ul class="list-inline" style="margin-top: 29px;">
+
+                            <div class="list-inline-item ">
+                                <input type="checkbox" id="checkbox" class="checkbox" />
+                                <label style="color:white;">电风扇 </label>
+                            </div>
+
+                            <div class="list-inline-item ">
+                                <input type="checkbox" id="checkbox" class="checkbox" />
+                                <label style="color:white;">电暖气 </label>
+                            </div>
+
+                            <div class="list-inline-item ">
+                                <input type="checkbox" id="checkbox" class="checkbox" />
+                                <label style="color:white;">净水机 </label>
+                            </div>
+
+                            <div class="list-inline-item ">
+                                <input type="checkbox" id="checkbox" class="checkbox" />
+                                <label style="color:white;">厨房小电 </label>
+                            </div>
+
+                            <div class="list-inline-item ">
+                                <input type="checkbox" id="checkbox" class="checkbox" />
+                                <label style="color: white;">清洁电器 </label>
+                            </div>
+
+                        </ul>
+
+
+                    </div>
+                  
+                    <form id="searchForm" action="{% url 'info:infolist' %}" method="get" class="search-form">  
+                        <div class="search-container">  
+                            <input id="search"   
+                                   name="keyword"   
+                                   class="form-control"   
+                                   placeholder="请输入要查找的内容"  
+                                   required>  
+                            <button type="submit" class="search-button">  
+                                <i class="ti-search search-icon" style="margin-top: 80px;"></i>  
+                            </button>  
+                        </div>  
+                    </form>  
+                </div>
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+
+<!--其他的暂时先去掉，只保留研究报告-->
+    <div class="nav2">
+        <ul>
+            <li><a class="act2" href="{% url 'home' %}">首页</a></li>
+
+            <li><a href="{% url 'info:infolist' %}" target="_blank">研究报告</a></li>
+     
+        </ul>
+    </div>
+    <!--header-top end-->
+
+
+
+<!--轮播图的样式表，先放在这里面后处理 -->
+    <style>
+
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    left:10px;
+}
+.prev:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+     color: #fff;
+
+}
+
+.next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    right:10px;
+}
+.next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.slides {  
+        display: flex; /* 使用 flexbox 布局 */  
+        overflow: hidden; /* 隐藏超出部分 */  
+}  
+    
+.slides li {  
+        list-style: none; /* 去掉默认的列表样式 */  
+        flex: 0 0 100%; /* 每个 li 占据 100% 的宽度 */  
+        position: relative; /* 为了定位标题 */  
+}  
+    
+.slides img {  
+        width: 100%; /* 图片宽度占满容器 */  
+        display: block; /* 去掉图片底部的空白间隙 */  
+}  
+    
+.img_title {  
+        position: absolute; /* 绝对定位标题 */  
+       width:30%;
+        
+        background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
+        color: #fff; /* 白色文字 */  
+        padding: 5px 10px; /* 内边距 */  
+       
+        font-size: 16px; /* 字体大小 */  
+        z-index: 1;
+}
+    /* 使用更具体的选择器来提高优先级 */  
+/* 针对 img_title 的 hover */  
+a .img_title:hover,  
+.img_title:hover {  
+    color: #2970b9; /* 鼠标悬浮时字体变红 */  
+}  
+
+    </style>
+
+
+    <div class="content1" style="background-color：rgba(0, 0, 0, 0.8)">
+
+
+        <div id="slider" class="flexslider height1 ">
+
+            <div class="news_box">
+                <div class="news_tip" style="  width:30%; position: relative;">
+                    近期焦点
+                </div>
+                <ul class="news_title">
+                    {% for banner in all_banners%}
+                    <li>
+                        <a href="{% url 'info:banner_download' banner.id %}" target="_blank" title="清洁电器">
+                            <div class="round_tip"> </div>
+                            <font size="4">{{ banner.title }}</font>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+
+
+            <ul class="slides" style=" transition: transform 0.5s ease-in-out;">
+                {% for banner in all_banners %}
+                <li >
+
+                 
+                    <a href="{% url 'info:banner_download' banner.id %}" target="_blank" class=" height1">
+                        <img src="{{ MEDIA_URL }}{{ banner.image }}" alt="" >
+                        <div class="img_title">{{ banner.title }}</div>
+                    </a>
+                
+
+                </li>
+                {% endfor %}
+            </ul>
+
+            <button class="prev" onclick="preSlide()">&#10094;</button>
+            <button class="next" onclick="nextSlide()">&#10095;</button>
+        </div>
+
+
+    </div>
+
+
+
+
+<script>
+    const slides = document.querySelectorAll('.slides li');  
+    let currentIndex = 0;  
+
+function showSlide(index) {  
+    slides.forEach((slide, i) => {  
+        slide.style.display = i === index ? 'block' : 'none';  
+    });  
+}  
+
+function nextSlide() {  
+    currentIndex = (currentIndex + 1) % slides.length;  
+    showSlide(currentIndex);  
+}  
+function preSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+//鼠标放在轮播图上，停止轮播
+function stopSlide() {
+    
+    interVal=setInterval(nextSlide, 3000);
+    clearInterval(interVal);
+
+}
+
+// 初始化显示第一张图片  
+showSlide(currentIndex);  
+//开始轮播图
+function startSlide()
+{
+   interVal = setInterval(nextSlide, 3000);
+}
+//停止轮播图
+function stopSlide()
+{
+    clearInterval(interVal)
+}
+document.querySelector('.flexslider').addEventListener('mouseenter',stopSlide);
+document.querySelector('.flexslider').addEventListener('mouseleave',startSlide);
+ 
+startSlide();
+</script>
+
+
+
+
+    <div class="content3 margin_bottom0 content2023">
+
+        <table>
+
+        </table>
+
+
+
+        <div class="service service2023" id="report_1">
+            <div class="content_title">
+                <span>政策宣发</span>
+                <div class="line1 width-bod96"></div>
+                <div class="more">
+                    <a href="#" target="_blank">
+                        <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="content_box4">
+                <div class="listed-companies-content">
+
+
+
+
+                    {% for number in numbers %}
+                    <a class="listed-companies-c-list" href="#" title="报告待添加" target="_blank">
+                        <i class=""><img
+                                src="{% static 'it/plugins/image1.askci.com/jingzhuenzhaoshang_img/images/2019-06-1000000007.png' %}"></i>
+                        <span>关于家电一院质量月活动通知</span>
+                    </a>
+                                     
+                    <a class="listed-companies-c-list" href="#" title="待添加" target="_blank">
+                        <i class=""><img
+                                src="{% static 'it/plugins/image1.askci.com/jingzhuenzhaoshang_img/images/2019-06-1000000008.png' %}"></i>
+                        <span>关于家电一院用户体验活动总结</span>
+                    </a>
+                    {% endfor %}
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="free_report free_report2023" id="report_2">
+            <div class="content_title">
+                <span>共享报告</span>
+                <div class="line1 width-bod96"></div>
+                <div class="more po_r4">
+                    <a href="#" target="_blank">
+                        <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
+                    </a>
+                </div>
+            </div>
+            <div class="free_report_content2">
+                <ul>
+                    {% for number in numbers %}
+                    <li>
+                        <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
+                            <div class="free_report_img2">
+                                <img src="/static/it/img/report_01.jpg" alt="#">
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
+                            <div class="free_report_title2">《扫地机器人行业算法现状、问题以及未来方向》报告</div>
+                        </a>
+                        <div class="hot_news_tips margin_top2">
+                            <img class="margin_left_8" src="/static/it/img/tip_03.jpg" alt="">
+                            <a href="#" target="_blank" title="#">家电材料</a>
+                        </div>
+                    </li>
+                  
+                   {% endfor %}
+                 
+                  
+                    
+
+
+
+
+                    <div class="clear_float"></div>
+                </ul>
+            </div>
+        </div>
+
+
+
+
+        <div class="clear_float"></div>
+    </div>
+
+
+    
+
+    <script src="/static/it/js/jquery.flexslider-min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $(".flexslider").flexslider({
+                animation: "fade", //有滑动的效果
+                controlNav: true, //是否显示小点点，false就不显示底部的导航了，也可以自己使用js隐藏。
+                directionNav: true, //是否显示左右箭头,还是可以使用js来隐藏
+                autoPlay: true,
+            });
+
+        });
+    </script>
+    
+    
+{% endblock %}

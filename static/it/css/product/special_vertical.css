@@ -1,0 +1,113 @@
+.special_broadcast_vertical {
+  width: 336px;
+  height: 430px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+.upward_nav_top {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  left: 143px;
+  background: url(//image1.askci.com/research_x_img/img/icon_jiantou_top.png)
+    center center no-repeat;
+}
+.special_broadcast_vertical:hover .upward_nav_top {
+  opacity: 1;
+}
+.special_roll_zx_com {
+  width: 336px;
+  height: 456px;
+}
+.special_roll_zx_com li {
+  width: 336px;
+  height: 228px;
+  display: block;
+}
+.special_roll_zx_com li a {
+  width: 336px;
+  height: 202px;
+  display: block;
+  margin-bottom: 26px;
+}
+.special_roll_zx_com li a img {
+  width: 336px;
+  height: 202px;
+  display: block;
+}
+.down_nav_bottom {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  left: 143px;
+  background: url(//image1.askci.com/research_x_img/img/icon_jiantou_bottom.png)
+    center center no-repeat;
+}
+.special_broadcast_vertical:hover .down_nav_bottom {
+  opacity: 1;
+}
+/*专题纵向滚动大*/
+
+.askci_special_broadcast_vertical {
+  width: 279px;
+  height: 532px;
+  margin: 0px auto;
+  position: relative;
+  overflow: hidden;
+}
+.askci_upward_nav_top {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  left: 113px;
+  background: url(//image1.askci.com/research_x_img/img/icon_jiantou_top.png)
+    center center no-repeat;
+}
+.askci_special_broadcast_vertical:hover .askci_upward_nav_top {
+  opacity: 1;
+}
+.askci_special_roll_zx_com {
+  width: 279px;
+  height: 546px;
+}
+.askci_special_roll_zx_com li {
+  width: 279px;
+  height: 182px;
+  display: block;
+}
+.askci_special_roll_zx_com li a {
+  width: 279px;
+  height: 168px;
+  display: block;
+  margin-bottom: 14px;
+}
+.askci_special_roll_zx_com li a img {
+  width: 279px;
+  height: 168px;
+  display: block;
+}
+.askci_down_nav_bottom {
+  opacity: 0;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  z-index: 99;
+  left: 113px;
+  background: url(//image1.askci.com/research_x_img/img/icon_jiantou_bottom.png)
+    center center no-repeat;
+}
+.askci_special_broadcast_vertical:hover .askci_down_nav_bottom {
+  opacity: 1;
+}
+/*专题纵向滚动小*/

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+	<title>404</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+    <script>  
+        // 倒计时功能  
+        let timeLeft = 5;  
+        
+        function updateTimer() {  
+            const timerElement = document.getElementById('timer');  
+            timerElement.textContent = timeLeft;  
+            
+            if (timeLeft === 0) {  
+                // 重定向到主页  
+                window.location.href = '{% url 'home' %}';  
+            } else {  
+                timeLeft--;  
+                setTimeout(updateTimer, 1000);  
+            }  
+        }  
+
+        // 页面加载完成后开始倒计时  
+        window.onload = function() {  
+            updateTimer();  
+        };  
+    </script>  
+
+    <style>
+        #go_home:hover {
+          
+           color:#468FD9;;
+        }
+    </style>
+
+</head>
+<body class="bg404 errorpage">
+<section>
+	<div class="wp">
+		<div class="cont">
+			<img src="{% static 'images/pic404.png' %}"/>
+			<br/><br/><br/><br/>
+			<p>访问受限</p>
+            <p>您需要登录后才能访问家电一院情报系统资源</p>
+			<br/>
+            <div class="timer">  
+                <span id="timer" style="color:#468FD9;">5</span> 秒后自动返回主页  
+            </div>  
+            <br/><br/>
+
+            <p>若未返回请点击<a href="{% url 'home' %}"  id="go_home" >这里</a>返回主页</p>
+			
+		</div>
+	</div>
+</section>
+</body>
+</html>

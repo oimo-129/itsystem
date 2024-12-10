@@ -1,0 +1,715 @@
+<!-- 这个归成研究报告界面比较好 -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>情报需求模块</title>
+    <script src="{% static 'it/js/jquery-1.11.3.min.js' %}"></script>
+    <script src="{% static 'it/js/common.js' %}"></script>
+    <script type="{% static 'text/javascript' %}">
+        Phonebrowser('');
+    </script>
+    <link rel="stylesheet" href="{% static 'it/css/product/main.css' %}">
+    <link rel="stylesheet" href="{% static 'it/css/product/basic.css' %}">
+    <link rel="stylesheet" href="{% static 'it/css/product/flexslider.css' %}">
+    <link rel="stylesheet" href="{% static 'it/css/product/footer.css' %}">
+    <script src="{% static 'it/js/product/slide_palace_treasury.js' %}"></script>
+    <link rel="icon" href="{% static 'it/img/gree.ico' %}" type="image/">
+
+    <link rel="stylesheet" href="{% static 'it/css/product/special_vertical.css' %}">
+    <link rel="stylesheet" href="{% static 'it/css/product/chanye.css' %}">
+    <script src="{% static 'it/js/product/special_vertical.js' %}"></script>
+
+    <!--增加非阻塞消息弹窗-->
+    <link rel="stylesheet" href="{% static 'plugin/toastr/toastr.min.css' %}">
+   
+
+     <!--新建弹窗需要的文件-->
+     <link rel="stylesheet" href="{% static 'plugin/sweetalert2.min.css' %}">
+     <script src="{% static 'plugin/sweetalert2.min.js' %}"></script>
+ 
+
+<style>
+
+
+
+    
+.header1{ width: 100%; height: 32px; background-color:hsl(221, 89%,41%); margin:0 auto;     }
+.header-top {  height:32px; margin:0 auto;}
+.header-top-left { height:32px;}
+.header-top-left a { float:left; font-size:15px; width:90px; line-height:32px; color:#eee; display:block;margin-right: 10px;}
+.header-top-left a span { float: left;padding-left:5px; padding-top: 0px; }
+ .header-top-left a:hover {background:#d85500;}
+ .header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center; }
+ .header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center;padding:0px 10px;padding-right:30px;}
+
+.header-top-right a span { color: #FFFFFF;float: right;}
+.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 2px;margin-top: 5px;}
+.header-top-right a:hover { color:#c92424;}
+.nav2{background-color: hsl(221, 89%,41%);}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* 设置图片和文字之间的间距 */
+}
+
+.user-info img {
+    display: block; /* 消除图片底部可能的空隙 */
+}
+
+.user-info span {
+    color: white;
+}
+
+
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #0d09eb;
+            min-width: 80px;
+            {#min-width: 160px;#}
+            box-shadow: 0px 8px 16px 0px rgba(220, 25, 25, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            background-color: #1d3dbb;
+        }
+
+
+
+        .dropdown-content a {
+            color: #ffffff;
+            padding: 12px 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #5395ec;
+            /* 悬停时更改链接背景色 */
+        }
+
+        .dropdown  {
+            padding-top:0px;
+            padding-right: 20px;
+            cursor: pointer;
+        }
+
+
+
+        .content_list_title_231 a::before {  
+    content: "📄";  
+    {#margin-right: 1px;  #}
+
+    }  
+
+
+
+    .toast-info {  
+        background-color: #105CB3 !important; /* 设置背景颜色为蓝色 */  
+        color: white; /* 设置文本颜色为白色，以便在蓝色背景上可读 */  
+    }
+
+
+    
+
+    .search_title_23 a.btn {  
+        background-color: #248dfb;;  
+        color: white;  
+
+
+
+
+
+
+
+        .search-form {  
+            display: flex;  
+            align-items: center;  
+        }  
+        
+        .search-result-info {  
+            margin: 10px 0;  
+            padding: 10px;  
+            background-color: #f5f5f5;  
+            border-radius: 4px;  
+        }  
+        
+        /* 如果没有搜索结果 */  
+        .no-results {  
+            text-align: center;  
+            padding: 20px;  
+            background-color: #f5f5f5;  
+            margin: 20px 0;  
+            border-radius: 4px;  
+        }  
+    }  
+
+
+
+
+
+/* 在你的 CSS 文件中添加 */  
+.date-form input[type="date"] {  
+    padding: 5px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    cursor: pointer;  
+}  
+
+.date-filter-info {  
+    margin: 10px 0;  
+    padding: 5px 10px;  
+    background-color: #f5f5f5;  
+    border-radius: 4px;  
+    font-size: 14px;  
+}  
+
+
+
+
+#contact:hover
+{
+    color:blue;
+}
+
+
+
+
+.my-swal {  
+    font-family: 'Arial', sans-serif;  
+}  
+
+.my-swal-popup {  
+    background-color: #f8f8f8;  
+    border-radius: 10px;  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+}  
+
+.my-swal-header {  
+    background-color: #007bff;  
+    color: #fff;  
+    padding: 20px;  
+    border-top-left-radius: 10px;  
+    border-top-right-radius: 10px;  
+}  
+
+.my-swal-title {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+.my-swal-content {  
+    padding: 20px;  
+    font-size: 16px;  
+}  
+
+.my-swal-confirm-button {  
+    background-color: #007bff;  
+    color: #fff;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    font-size: 16px;  
+    cursor: pointer;  
+}
+</style>
+
+
+</head>
+
+
+<body>
+
+ <div class="header1">
+        <div class="header-top">
+            <div class="header-top-left fl">
+                <a href="{% url 'home' %}" target="_blank">
+
+                    <img class="flb" src="{% static 'it/img/gree.ico' %}">
+                    <span>首页</span>
+                </a>
+
+            </div>
+
+
+            <div class="header-top-right fr ">
+{% if request.user.is_authenticated %}
+    <div class="dropdown">
+
+        <div class="user-info">
+            {% if request.user.avatar %}
+            <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" >
+           {% else %}
+           <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" >
+           {% endif %}
+             <span style="color: white; ">{{ user.username }}</span>
+        </div>
+
+        <div class="dropdown-content">
+                     <a href="{% url 'user:userinfo' %}">个人中心</a>
+                     <a href="{% url 'logout' %}">退出登录</a>
+        </div>
+
+    </div>
+{% else %}
+        <a href="{% url 'login' %}" target="_blank">
+            <img src="{% static 'it/img/person-fill-check.svg' %}" width="20" height="20">
+            用户登录
+        </a>
+{% endif %}
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+<!--搜索模块引入-->
+
+    <div class="nav">
+        <div class="nav_inbox">
+            <a href="{% url 'home' %}">
+                <img class="logo" src="{% static 'it/img/logo_jd.png' %}" alt="">
+            </a>
+            <div class="search">
+                <!--添加GET表单-->
+                <form id="searchForm" method="get" action="{% url 'info:infolist' %}" class="search-form">
+                    <!--如何有 category参数，保留它-->
+                    {% if current_category != 'all' %}
+                    <input type="hidden" name="category" value="{{ current_category }}">  
+                    {% endif %}
+                
+                    <input type="text" name="keyword" placeholder="请输入文件关键词" value="{{ keyword|default:'' }}" style="color: #333;">
+                    <button type="submit" class="search_btn">立即搜索</button>  
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<!-- 添加搜索结果提示（可选） -->  
+<!--{% if keyword %}  
+<div class="search-result-info">  
+    搜索关键词: "{{ keyword }}" - 找到 {{ total_files }} 个结果  
+</div>  
+{% endif %}  
+-->
+
+
+
+    <div class="nav2">
+        <ul>
+            <li><a  href="{% url 'home' %}">情报首页</a></li>
+            <li><a class="act2" href="#" target="_blank">研究报告</a></li>
+            
+        </ul>
+    </div>
+
+
+
+
+
+<!-- content start -->
+<div class="bg_color7">
+    <div class="content3">
+        <!-- title start -->
+        <div class="search_title_23">
+
+                        <a href="{% url 'info:infolist' %}" class="{% if not current_category or current_category == 'all' %}btn{% endif %}" >
+                            全部资料</a>
+                        <a href="{% url 'info:infolist' %}?category=产业洞察" class="{% if current_category == '产业洞察' %}btn{% endif %}">
+                            产业洞察</a>
+                        <a href="{% url 'info:infolist' %}?category=行业研究" class="{% if current_category == '行业研究' %}btn{% endif %}">
+                            行业研究</a>
+                        <a href="{% url 'info:infolist' %}?category=用户调研" class="{% if current_category == '用户调研' %}btn{% endif %}">
+                            用户调研</a>
+                        <a href="{% url 'info:infolist' %}?category=院内报告" class="{% if current_category == '院内报告' %}btn{% endif %}">
+                            院内报告</a>
+                      
+        </div>
+        <!-- title end -->
+        <!-- search start -->
+        <div class="chart-vd f-cb">
+
+         <!-- 添加日期选择器 -->  
+<ul>  
+    <li>  
+        <div id="divItem">  
+   
+            <form id="dateForm" method="get" action="{% url 'info:infolist' %}" class="date-form name">  
+                报告时间：
+                <!-- 保留现有的搜索参数 -->  
+                {% if keyword %}  
+                <input type="hidden" name="keyword" value="{{ keyword }}">  
+                {% endif %}  
+                {% if current_category != 'all' %}  
+                <input type="hidden" name="category" value="{{ current_category }}">  
+                {% endif %}  
+                
+                <input type="date" name="selected_date" value="{{ selected_date|default:'' }}"   
+                       onchange="this.form.submit()">  
+            </form>  
+        </div>  
+    </li>  
+</ul>  
+
+
+
+
+
+
+
+            <div class="search-head">
+
+                <form id="searchForm" method="get" action="{% url 'info:infolist' %}" class="search-form">
+                   <!--如何有 category参数，保留它-->
+                   {% if current_category != 'all' %}
+                   <input type="hidden" name="category" value="{{ current_category }}">  
+                   {% endif %}
+               
+                    <input type="text" id="queryKey"  name="keyword" class="keys" value="{{ keyword|default:'' }}" placeholder="请输入关键词" style="color: #333;">
+
+                    
+                    <button type="submit" class="search_btn" style="display: none;">搜索</button> <!-- 隐藏按钮，使用图片代替 --> 
+                    <p class="sub_23" style="cursor: pointer;" onclick="this.parentElement.submit();" >
+                        
+                       
+                        <img src="{% static 'it/images/chanye_search_23.png' %}" alt="">
+                        搜索
+                    </p>
+                </form>
+
+            </div>
+        
+    </div>
+        <!-- search end -->
+        <!-- content list start -->
+
+
+
+
+
+
+
+        <div class="content_list_23">
+
+
+            <!--文件放的列表地方-->
+
+
+
+
+            <ul>
+
+                {% for file in files %}
+
+                 <li>
+                                    <div class="content_list_img_23">
+                                        <a href="{% url 'info:file_download' file.id %}" title="#" target="_blank">
+                                            <img src="{{ file.cover.url }}" alt="#">
+                                        </a>
+                                    </div>
+                                    <div class="content_list_font_232">
+                                        <a href="{% url 'info:file_download' file.id %}" target='_blank' title='#'>{{ file.file_dist }}</a>
+
+                                        <b>{{ file.add_time }}</b>
+                                    </div>
+
+
+
+                                    <div class="content_list_title_231">
+                                        <a href="{% url 'info:file_download' file.id %}" title="{{ file.name }}" target="_blank" class="wes2" >
+                                            {{ file.name }}
+                                        </a>
+                                    </div>
+
+
+
+
+                  </li>
+
+                {% endfor %}
+
+            </ul>
+
+
+
+        </div>
+
+
+
+
+
+
+
+    <!--分页模块-->
+
+        <!-- content list end -->
+        <!-- padding start -->
+        <div class="Pagination margin_top26" id="kkpager">
+
+        </div>
+        <!-- padding end -->
+    </div>
+</div>
+<!-- content start -->
+
+    <!-- 页脚 -->
+   <!-- 移除多余的闭合标签和注释 -->  
+<div id="footer">  
+    <div class="footer_end">  
+        <div class="footer_end_box">  
+            <div class="footer_end_box_left">  
+                <p>  
+                    <a href="#" target="_blank" title="家电一院">格力电器家电技术研究一院</a>  
+                    <i>|</i>  
+                    <a href="#"  title="联系我们" onclick="contact() " id="contact">联系管理员</a> 
+                </p>  
+            </div>  
+            <div class="footer_end_box_right">  
+                <img src="{% static 'it/img/gree.ico' %}" alt="格力logo" class="code2">  
+                <div>家电一院情报系统</div>  
+            </div>  
+        </div>  
+    </div>  
+</div>  
+    <!--header-top end-->
+    <!--header-top end-->
+
+
+
+
+    <script src="{% static 'it/js/product/up_silde.js' %}"></script>
+
+ <!--第三方分页插件 -->
+
+    <script type="text/javascript" src="{% static 'it/js/product/kkpager.min.js' %}"></script>
+
+    <script type="text/javascript">
+    $(function () {
+        //计算总页码
+        var pageSize = {{ page_size }}; //每一页显示数量
+        var totalRecord = {{ total_files }};//总记录数
+        var totalPage = Math.ceil(totalRecord / pageSize);//总页数
+        var currentPage = {{ request.GET.page|default:1 }};//当前页码，默认是1
+
+        //生成分页插件
+        kkpager.generPageHtml({
+            pagerid: 'kkpager',
+            pno: currentPage,
+            total: totalPage,
+            totalRecords: totalRecord,
+            mode: 'link', //设置为link模式
+
+            isShowTotalPage: true,
+            isShowTotalRecords: true,
+            isShowFirstPageBtn: true,
+            isShowLastPageBtn: true,
+            isGoPage: false,
+
+            //我添加的：链接函数处理
+            //getLink仅适用于mode为link
+            getLink: function (n) {
+                //构建分页URL,保留其他查询数据？
+                var baseUrl = window.location.pathname;
+                var params = new URLSearchParams(window.location.search);
+                params.set('page',n);
+                //分类参数
+                var category = params.get('category')
+                if(category)
+                {
+                    params.set('category',category);
+                }
+                return baseUrl+'?'+params.toString();
+
+            },
+     
+            lang:{
+                firstPageText: '首页',
+            firstPageTipText: '首页',
+            lastPageText: '尾页',
+            lastPageTipText: '尾页',
+            prePageText: '上一页',
+            prePageTipText: '上一页',
+            nextPageText: '下一页',
+            nextPageTipText: '下一页',
+            totalPageBeforeText: '共',
+            totalPageAfterText: '页',
+            totalRecordsAfterText: '条数据',
+            gopageBeforeText: '转到',
+            gopageButtonOkText: '确定',
+            gopageAfterText: '页',
+            buttonTipBeforeText: '第',
+            buttonTipAfterText: '页'
+
+            },
+
+             // 样式
+        themeCss: 'pagination',
+        noPageText: '...',
+        isShowPrePageBtn: true,
+        isShowNextPageBtn: true,
+        isShowTotalPage: true,
+        isShowTotalRecords: true,
+        isGoPage: false,
+        isWrapedPageBtns: true,
+        isWrapedInfoTextAndGoPageBtn: true
+
+        });
+    });
+
+    </script>
+
+
+    <script>  
+        $(document).ready(function(){  
+            // 下载按钮点击事件  
+            $('.download-btn').click(function(e){  
+                toastr.info('文件正在处理，请稍后...', '', {  
+                    "timeOut": "1000",  
+                    "positionClass": "toast-top-center"  
+                });  
+            });  
+        
+            // 保持分页时的分类参数  
+            function updatePaginationLinks() {  
+                var category = new URLSearchParams(window.location.search).get('category');  
+                if (category) {  
+                    $('#kkpager a').each(function() {  
+                        var href = $(this).attr('href');  
+                        if (href) {  
+                            var url = new URL(href, window.location.origin);  
+                            url.searchParams.set('category', category);  
+                            $(this).attr('href', url.search);  
+                        }  
+                    });  
+                }  
+            }  
+        
+            // 在分页生成后更新链接  
+            if (typeof kkpager !== 'undefined') {  
+                var oldGenerPageHtml = kkpager.generPageHtml;  
+                kkpager.generPageHtml = function(args) {  
+                    oldGenerPageHtml.call(this, args);  
+                    updatePaginationLinks();  
+                };  
+            }  
+        });  
+        </script>
+
+
+        <!-- 添加必要的 JavaScript -->  
+<script>  
+    document.addEventListener('DOMContentLoaded', function() {  
+        // 获取表单元素  
+        const searchForm = document.getElementById('searchForm');  
+        const searchInput = searchForm.querySelector('input[name="keyword"]');  
+    
+        // 添加表单提交事件处理  
+        searchForm.addEventListener('submit', function(e) {  
+            // 如果搜索框为空，阻止提交  
+            if (!searchInput.value.trim()) {  
+                e.preventDefault();  
+                alert('请输入搜索关键词');  
+                return false;  
+            }  
+        });  
+    
+        // 添加输入框回车键处理  
+        searchInput.addEventListener('keypress', function(e) {  
+            if (e.key === 'Enter') {  
+                searchForm.submit();  
+            }  
+        });  
+    });  
+    </script>  
+
+
+
+
+    <!-- 添加 JavaScript 以确保点击标签时触发日期选择器 -->  
+    <script>  
+        document.addEventListener('DOMContentLoaded', function() {  
+            const dateLabel = document.querySelector('.date-label');  
+            const datePicker = document.getElementById('datePicker');  
+            
+            if (dateLabel && datePicker) {  
+                dateLabel.addEventListener('click', function(e) {  
+                    e.preventDefault();  
+                    // 使用showPicker()方法（现代浏览器支持）  
+                    if (datePicker.showPicker) {  
+                        datePicker.showPicker();  
+                    } else {  
+                        // 降级方案：直接触发点击  
+                        datePicker.click();  
+                    }  
+                });  
+        
+                // 监听日期变化  
+                datePicker.addEventListener('change', function() {  
+                    this.form.submit();  
+                });  
+            }  
+        });
+    </script>  
+
+    <script>
+        function contact() {  
+            var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;  
+            Swal.fire({  
+                title: '管理员',  
+                html: '<div style="text-align: center;">家电技术研究一院:胡芳<br><br>联系座机：29844</div>',  
+                icon: 'question',  
+                confirmButtonText: '确定',  
+                customClass: {  
+                    container: 'my-swal',  
+                    popup: 'my-swal-popup',  
+                    header: 'my-swal-header',  
+                    title: 'my-swal-title',  
+                    closeButton: 'my-swal-close-button',  
+                    image: 'my-swal-image',  
+                    content: 'my-swal-content',  
+                    input: 'my-swal-input',  
+                    actions: 'my-swal-actions',  
+                    confirmButton: 'my-swal-confirm-button',  
+                    cancelButton: 'my-swal-cancel-button',  
+                    footer: 'my-swal-footer'  
+                },
+                width: '400px'   
+            }).then(function() {  
+                window.scrollTo(0, currentScrollPosition);  
+            });  
+        }
+    </script>
+   
+    <script src="{% static 'plugin/toastr/toastr.min.js' %}" type="text/javascript"></script>
+
+    <script type="text/javascript" src="/static/it/js/product/basic.js"></script>
+
+    <script src="/static/it/js/product/proposal-Submit.js" type="text/javascript"></script>
+
+    <script src="/static/it/js/baidusearch.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/static/it/js/askciTongJi.js"></script>
+
+
+    <script src="/static/it/js/product/jquery.common.js"></script>
+
+
+
+
+
+</body>
+</html>

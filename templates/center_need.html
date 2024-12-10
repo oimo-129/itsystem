@@ -1,0 +1,164 @@
+{% extends 'usercenter.html' %}
+
+{% block custom_css %}
+{#    这边添加boot5的样式#}
+     <link rel="stylesheet" href="/static/boot_css/bootstrap.css">
+    <script src="/static/boot_js/bootstrap.bundle.js"></script>
+
+    <style>
+        .form-control::placeholder {  
+            color: lightgray; /* 设置浅灰色 */  
+            font-style: italic; /* 可选：设置斜体 */  
+        }
+       
+
+
+    </style>    
+
+{% endblock %}
+
+
+{% block title %}
+
+    个人中心情报需求模块
+
+{% endblock %}
+
+
+
+
+{% block index_center %}
+
+<section>
+	<div class="wp">
+		<ul  class="crumbs">
+			<li><a href="{% url 'home' %}">首页</a>></li>
+			<li><a href="{% url 'user:userinfo' %}">个人中心</a>></li>
+			<li>情报需求上传</li>
+		</ul>
+	</div>
+</section>
+
+{% endblock %}
+
+
+
+{% block main %}
+
+<section>
+
+	<div class="wp list personal_list">
+
+
+	<div class="left">
+        <ul>
+            <li ><a href="{% url  'user:userinfo' %}">用户信息</a></li>
+            <li class="active2"><a href="#">情报需求上传</a></li>
+            <li ><a href="{% url 'logout' %}">退出登录</a></li>
+
+        </ul>
+	</div>
+
+
+    <div class="right  border border-grey" >
+
+
+
+  <div class="h2" style="font-family:SimSun ; text-align:center;margin-bottom: 40px; background: lightgrey">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-file-earmark-spreadsheet" viewBox="0 0 16 16">
+      <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z"/>
+    </svg>
+     <b >家电一院情报需求</b>
+  </div>
+
+
+
+<div class=" personal_des container mt-3">
+
+
+
+    <form>
+
+
+        <div class="row mb-4"  >
+            <div class="col" style="display: flex; align-items: center; margin-right:20px;">
+                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">涉及板块：</label>
+                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+            <div class="col" style="display: flex; align-items: center;">
+                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">分析大类：</label>
+                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+        </div>
+
+
+
+        <div class="row mb-4">
+            <div class="col" style="display: flex; align-items: center; margin-right:20px;">
+                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">分析细类：</label>
+                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+            <div class="col" style="display: flex; align-items: center;">
+                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">紧急程度：</label>
+                <select class="form-select"  style="color: lightgray;" onchange="this.style.color = 'black';">
+                    <option value="" disabled selected >请选择</option> <!-- 默认选项 --> 
+                    <option>非常紧急（需3天内完成）</option>
+                    <option>较紧急（3-7天）</option>
+                    <option>一般紧急（7天以上）</option>
+                  </select>
+                  
+            </div>
+        </div>
+
+
+        <div class="mb-4 mt-6 ">
+            <label class="mb-3" for="comment">具体内容：</label>
+            <textarea class="form-control" rows="4" id="comment" name="text"></textarea>
+        </div>
+
+        
+        <div class="row">
+            <div class="col" style="display: flex; align-items: center; margin-right:20px;">
+                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">需求科室：</label>
+                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+            <div class="col" style="display: flex; align-items: center;">
+                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">对接人员：</label>
+                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+            <div class="col" style="display: flex; align-items: center;">
+                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">联系方式：</label>
+                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+            </div>
+
+        </div>
+
+        <div style="border-top: 10px solid lightgray; margin: 40px 0;"></div>
+
+        <div class="d-flex  mb-4 mt-4 m-4 justify-content-end" >
+            <button type="submit" class="btn btn-primary" style="padding: 10px 20px;">上传</button>
+        </div>
+
+    </form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+    </div>
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+	<meta charset="UTF-8">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
+	<title>家电一院情报系统/登录</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+<!--新建弹窗需要的文件-->
+    <link rel="stylesheet" href="{% static 'plugin/sweetalert2.min.css' %}">
+    <script src="{% static 'plugin/sweetalert2.min.js' %}"></script>
+
+
+    <style>
+
+    .my-swal {  
+        font-family: 'Arial', sans-serif;  
+    }  
+    
+    .my-swal-popup {  
+        background-color: #f8f8f8;  
+        border-radius: 10px;  
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+    }  
+    
+    .my-swal-header {  
+        background-color: #007bff;  
+        color: #fff;  
+        padding: 20px;  
+        border-top-left-radius: 10px;  
+        border-top-right-radius: 10px;  
+    }  
+    
+    .my-swal-title {  
+        font-size: 24px;  
+        font-weight: bold;  
+    }  
+    
+    .my-swal-content {  
+        padding: 20px;  
+        font-size: 16px;  
+    }  
+    
+    .my-swal-confirm-button {  
+        background-color: #007bff;  
+        color: #fff;  
+        border: none;  
+        padding: 10px 20px;  
+        border-radius: 5px;  
+        font-size: 16px;  
+        cursor: pointer;  
+    }
+    </style>
+</head>
+<body>
+
+
+
+<div class="dialog" id="jsDialog">
+<!--提示弹出框-->
+<div class="successbox dialogbox" id="jsSuccessTips">
+    <h1>成功提交</h1>
+    <div class="close jsCloseDialog"><img src="{% static 'images/dig_close.png' %}"/></div>
+    <div class="cont">
+        <h2>您的需求提交成功！</h2>
+        <p></p>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="bg" id="dialogBg"></div>
+
+
+<header>
+    <div class="c-box fff-box">
+        <div class="wp header-box">
+            <p class="fl hd-tips">家电一院情报系统/登录</p>
+            <ul class="fr hd-bar">
+{#                <li>服务电话：<span>33333333</span></li>#}
+                <li class="active"><a href="{% url 'login' %}">[登录]</a></li>
+                <li><a href="{% url 'resign' %}">[注册]</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+
+
+<section>
+    <div class="c-box bg-box">
+        <div class="login-box clearfix">
+            <div class="hd-login clearfix">
+                <a class="index-logo" href="/"></a>
+{#                <h1>用户登录</h1>#}
+                <a class="index-font" href="{% url 'home' %}">回到首页</a>
+            </div>
+            <div class="fl slide">
+                <div class="imgslide">
+                    <ul class="imgs">
+                            <li><a href=""><img width="483" height="472" src="/static/img_add/loop1.png" /></a></li>
+                            <li><a href=""><img width="483" height="472" src="/static/img_add/loop2.png" /></a></li>
+                            <li><a href=""><img width="483" height="472" src="/static/img_add/loop3.png" /></a></li>
+
+                    </ul>
+                </div>
+                <div class="unslider-arrow prev"></div>
+                <div class="unslider-arrow next"></div>
+            </div>
+        
+        
+            <div class="fl form-box">
+                <h2>帐号登录</h2>
+                <form action="/login/" method="post" autocomplete="off">
+                    <input type='hidden' name='csrfmiddlewaretoken' value='mymQDzHWl2REXIfPMg2mJaLqDfaS1sD5' />
+                
+                
+                    <div class="form-group marb20 {% if login_form.errors.username %}errorput{% endif %}">
+                        <label>用&nbsp;户&nbsp;名</label>
+                        
+                        <input name="username" id="account_l" type="text" placeholder="用户名/邮箱" />
+                    </div>
+                
+                
+                    <div class="form-group marb8 {% if login_form.errors.password %}errorput{% endif %}">
+                        <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
+                        <input name="password" id="password_l" type="password" placeholder="请输入您的密码" />
+                    </div>
+                
+                
+                    <div class="error btns login-form-tips" id="jsLoginTips">{% for key,error in login_form.errors.items %}{{ error }}{% endfor %}{{ msg }}</div>
+                     
+                    
+                    <div class="auto-box marb38">
+{#                        <label><input type="checkbox" id="jsAutoLogin"> 自动登录</label>#}
+                        <a class="fr" onclick="contact()">忘记密码？联系管理员</a>
+                     </div>
+                
+                
+                     <input class="btn btn-green" id="jsLoginBtn" type="submit" value="立即登录 > " />
+                
+                
+                {% csrf_token %}
+                
+                
+                </form>
+                <p class="form-p">账号注册<a href="{% url 'resign' %}">[立即注册]</a></p>
+            </div>
+        
+        
+        
+        </div>
+    </div>
+</section>
+<script src="/static/js/jquery.min.js" type="text/javascript"></script>
+<script src="/static/js/unslider.js" type="text/javascript"></script>
+<script src="/static/js/login.js"  type="text/javascript"></script>
+
+
+<script>
+    function contact() {  
+        var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;  
+        Swal.fire({  
+            title: '管理员',  
+            html: '<div style="text-align: center;">家电技术研究一院:胡芳<br><br>联系座机：29844</div>',  
+            icon: 'question',  
+            confirmButtonText: '确定',  
+            customClass: {  
+                container: 'my-swal',  
+                popup: 'my-swal-popup',  
+                header: 'my-swal-header',  
+                title: 'my-swal-title',  
+                closeButton: 'my-swal-close-button',  
+                image: 'my-swal-image',  
+                content: 'my-swal-content',  
+                input: 'my-swal-input',  
+                actions: 'my-swal-actions',  
+                confirmButton: 'my-swal-confirm-button',  
+                cancelButton: 'my-swal-cancel-button',  
+                footer: 'my-swal-footer'  
+            },
+            width: '400px'   
+        }).then(function() {  
+            window.scrollTo(0, currentScrollPosition);  
+        });  
+    }
+</script>
+</body>
+</html>
