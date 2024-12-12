@@ -54,9 +54,12 @@ class IndexView(View):
 
         #轮播图资源
         all_banners = BannerModel.objects.all().order_by('-add_time')
+        #左侧文件资源
+        all_file1s = File1Model.objects.all().order_by('-add_time')
         numbers = range(1,9)
         context = {
             'all_banners': all_banners,
+            'all_file1s':all_file1s,
             'MEDIA_URL': settings.MEDIA_URL,
             'numbers': numbers,
         }
@@ -198,15 +201,6 @@ class UserInfoView(LoginRequiredMixin,View):
                 'status': 'error',  
                 'message': error_msg  
             })  
-
-        # username=request.POST.get('username','')
-        # desp_id=request.POST.get('desp_id','')
-        # department = Department.objects.get(id=desp_id)
-        # request.user.username = username  
-        # request.user.desp_name = department
-        # request.user.save()
-        # return render(request, "usercenter.html", {})
-
 
 
 

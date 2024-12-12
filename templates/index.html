@@ -289,33 +289,30 @@ startSlide();
 
 
         <div class="service service2023" id="report_1">
+
             <div class="content_title">
                 <span>政策宣发</span>
                 <div class="line1 width-bod96"></div>
                 <div class="more">
-                    <a href="#" target="_blank">
+                    <a href="#" >
                         <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
                     </a>
                 </div>
             </div>
+
             <div class="content_box4">
                 <div class="listed-companies-content">
 
 
 
 
-                    {% for number in numbers %}
-                    <a class="listed-companies-c-list" href="#" title="报告待添加" target="_blank">
+                    {% for file1 in all_file1s %}
+                    <a class="listed-companies-c-list" href="{% url 'info:file1_download' file1.id %}" title="报告待添加" >
                         <i class=""><img
-                                src="{% static 'it/plugins/image1.askci.com/jingzhuenzhaoshang_img/images/2019-06-1000000007.png' %}"></i>
-                        <span>关于家电一院质量月活动通知</span>
+                                src="{% static 'img_add/tick1.png' %}"></i>
+                        <span>测试左侧文件下载</span>
                     </a>
-                                     
-                    <a class="listed-companies-c-list" href="#" title="待添加" target="_blank">
-                        <i class=""><img
-                                src="{% static 'it/plugins/image1.askci.com/jingzhuenzhaoshang_img/images/2019-06-1000000008.png' %}"></i>
-                        <span>关于家电一院用户体验活动总结</span>
-                    </a>
+                
                     {% endfor %}
 
 

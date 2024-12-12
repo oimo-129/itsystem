@@ -40,6 +40,29 @@ class BannerModel(models.Model):
 
 
 '''
+首页左下文件
+'''
+class File1Model(models.Model):
+    #文件
+    file1 = models.FileField(upload_to=upload_to, verbose_name = '首页左下文件',null = True)
+    #添加时间
+    add_time = models.DateField(default=datetime.now,verbose_name="添加时间")
+    
+    
+    class Meta:
+        verbose_name = "首页左下文件表"
+        verbose_name_plural = verbose_name
+
+    #控制model实例的名字
+    def __str__(self):
+       return os.path.basename(self.file1.name)
+
+
+
+
+
+
+'''
 产品线页面的资源文件
 
 '''

@@ -3,7 +3,7 @@
 {%  load static %}
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}base页面 {%  endblock %}</title>
+    <title>{% block title %}主界面 {%  endblock %}</title>
     <meta name="keywords" content="测试" />
     <meta name="description" content="测试" />
 
@@ -29,7 +29,7 @@
     <!-- boot4导航栏所需图标 -->
     <link rel="stylesheet" href="{% static 'it/plugins/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'it/plugins/themify-icons/themify-icons.css' %}">
-    <link rel="icon" href="{% static 'it/img/gree.ico' %}" type="image/">
+    <link rel="icon" href="{% static 'img_add/icon1.png' %}" type="image/">
 
     <link href="{% static 'it/assets/style.css' %}" rel="stylesheet" media="screen" />
 
@@ -183,7 +183,8 @@
             <div class="header-top-left fl">
                 <a href="{% url 'home' %}" target="_blank">
 
-                    <img class="flb" src="{% static 'it/img/gree.ico' %}">
+                    
+                    <img class="flb" src="{% static 'img_add/icon1.png' %}">
                     <span>首页</span>
                 </a>
 

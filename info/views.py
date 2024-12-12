@@ -166,3 +166,30 @@ class BannerDownloadView(View):
         except FileNotFoundError:
             raise Http404("文件未找到")
 
+
+
+
+#首页左下文件下载    
+class File1DownloadView(View):
+    
+   
+    def get(self, request, file_id):
+        file_obj = get_object_or_404(BannerModel, id=file_id)
+        file_path = file_obj.file_banner.path
+
+        try:
+            filename = os.path.basename(file_path)
+            ext = os.path.splitext(filename)[1].lower()
+
+            # 获取 MIME 类型
+            content_type = MIME_TYPES.get(ext) or mimetypes.guess_type(file_path)[0]
+
+            response = FileResponse(open(file_path, 'rb'))
+            response['Content-Type'] = content_type
+            response['Content-Disposition'] = f'attachment; filename="{filename}"'
+
+            return response
+
+        except FileNotFoundError:
+            raise Http404("文件未找到")
+
