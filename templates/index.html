@@ -2,7 +2,7 @@
 {% block title  %} 情报系统首页 {% endblock %}
 {%  load static %}
 
-
+{% load custom_filters %}
 
 {% block custom %}
 
@@ -294,29 +294,39 @@ startSlide();
                 <span>政策宣发</span>
                 <div class="line1 width-bod96"></div>
                 <div class="more">
-                    <a href="#" >
+                    <!--添加分页功能-->
+                    {% if current_page.has_next %}
+                    <a href="?page={{ current_page.next_page_number }}" >
                         <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
                     </a>
+                    {% else %}
+                    <a href="?page=1" >
+                        <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
+                    </a>
+                    {% endif %}
                 </div>
             </div>
 
             <div class="content_box4">
                 <div class="listed-companies-content">
-
-
-
-
-                    {% for file1 in all_file1s %}
-                    <a class="listed-companies-c-list" href="{% url 'info:file1_download' file1.id %}" title="报告待添加" >
-                        <i class=""><img
-                                src="{% static 'img_add/tick1.png' %}"></i>
-                        <span>测试左侧文件下载</span>
+                    {% for file1, file_name in current_page.object_list %}
+                    <a class="listed-companies-c-list" href="{% url 'info:file1_download' file1.id %}" title="左下侧文件" >
+                        <i class="">
+                            {% if forloop.counter == 1 %}
+                                <img src="{% static 'img_add/tick1.png' %}">
+                            {% elif forloop.counter == 2 %}
+                                <img src="{% static 'img_add/tick2.png' %}">
+                            {% elif forloop.counter == 3 %}
+                                <img src="{% static 'img_add/tick3.png' %}">
+                            {% elif forloop.counter == 4 %}
+                                <img src="{% static 'img_add/tick4.png' %}">
+                            {% else %}
+                                <img src="{% static 'img_add/tick1.png' %}">
+                            {% endif %}
+                        </i>
+                        <span>{{ file_name }}</span>
                     </a>
-                
                     {% endfor %}
-
-
-
                 </div>
             </div>
         </div>
@@ -337,7 +347,7 @@ startSlide();
 
         <div class="free_report free_report2023" id="report_2">
             <div class="content_title">
-                <span>共享报告</span>
+                <span>文件待上传</span>
                 <div class="line1 width-bod96"></div>
                 <div class="more po_r4">
                     <a href="#" target="_blank">
@@ -399,6 +409,42 @@ startSlide();
 
         });
     </script>
-    
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // 获取所有分页链接
+            const pageLinks = document.querySelectorAll('.more a');
+            
+            pageLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // 获取目标页面URL
+                    const url = this.getAttribute('href');
+                    
+                    // 使用fetch获取新页面内容
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            // 更新列表内容
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+                            
+                            // 更新文件列表内容
+                            const newContent = doc.querySelector('.listed-companies-content');
+                            document.querySelector('.listed-companies-content').innerHTML = newContent.innerHTML;
+                            
+                            // 更新分页链接
+                            const newMoreLink = doc.querySelector('.more a');
+                            document.querySelector('.more a').setAttribute('href', newMoreLink.getAttribute('href'));
+                            
+                            // 更新URL，但不刷新页面
+                            history.pushState(null, '', url);
+                        });
+                });
+            });
+        });
+        </script>
     
 {% endblock %}

@@ -1,7 +1,11 @@
 from django.contrib import admin  
 from django.contrib.auth.admin import UserAdmin  
 from django.contrib.auth.forms import UserChangeForm, UserCreationForm  
-from .models import UserProfile, Department  
+from .models import UserProfile, Department,NeedForm
+
+#添加用户请求管理模块
+from openpyxl import Workbook
+from django.http import HttpResponse
 
 # 自定义用户修改表单  
 class CustomUserChangeForm(UserChangeForm):  
@@ -67,14 +71,83 @@ class CustomUserAdmin(UserAdmin):
 class DepartmentAdmin(admin.ModelAdmin):  
     list_display = ['name']  
     search_fields = ['name']  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+#解释器语法     
+  
+@admin.register(NeedForm)
+class NeedFormAdmin(admin.ModelAdmin):
+    list_display = ['user', 'submit_time', 'section', 'analysis_type', 'urgency', 'department', 'contact_person']
+    list_filter = ['urgency', 'submit_time', 'department']
+    search_fields = ['user__username', 'content', 'section']
+    
+    actions = ['export_as_excel']
+
+    def export_as_excel(self, request, queryset):
+        response = HttpResponse(
+            content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+        )
+        response['Content-Disposition'] = 'attachment; filename="need_forms.xlsx"'
+        
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "需求表单"
+        
+        # 写入表头
+        columns = [
+            '用户名', '提交时间', '涉及板块', '分析大类', '分析细类',
+            '紧急程度', '具体内容', '需求科室', '对接人员', '联系方式'
+        ]
+        ws.append(columns)
+        
+        # 写入数据
+        for obj in queryset:
+            row = [
+                obj.user.username,
+                obj.submit_time.strftime('%Y-%m-%d %H:%M'),
+                obj.section,
+                obj.analysis_type,
+                obj.analysis_detail,
+                obj.get_urgency_display(),
+                obj.content,
+                obj.department,
+                obj.contact_person,
+                obj.contact_info
+            ]
+            ws.append(row)
+        
+        # 调整列宽
+        for column in ws.columns:
+            max_length = 0
+            column = list(column)
+            for cell in column:
+                try:
+                    if len(str(cell.value)) > max_length:
+                        max_length = len(str(cell.value))
+                except:
+                    pass
+            adjusted_width = (max_length + 2)
+            ws.column_dimensions[column[0].column_letter].width = adjusted_width
+        
+        wb.save(response)
+        return response
+    
+    export_as_excel.short_description = '导出选中项到Excel'
 
 # 注册模型到 admin  
 admin.site.register(UserProfile, CustomUserAdmin)  
 admin.site.register(Department, DepartmentAdmin)
-
-
-
-
 # 修改管理后台的标题和头部  
 admin.site.site_header = '家电一院情报系统后台'  # 设置网站页头  
 admin.site.site_title = '家电一院情报系统'   # 设置页面标题  

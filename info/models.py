@@ -45,6 +45,8 @@ class BannerModel(models.Model):
 class File1Model(models.Model):
     #文件
     file1 = models.FileField(upload_to=upload_to, verbose_name = '首页左下文件',null = True)
+    
+    
     #添加时间
     add_time = models.DateField(default=datetime.now,verbose_name="添加时间")
     

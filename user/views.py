@@ -33,6 +33,9 @@ from django.conf import settings
 #首页的资源载入
 from info.models import *
 
+#分页功能
+from django.core.paginator import Paginator
+
 #登录验证
 class CustomBackend(ModelBackend):
 
@@ -51,17 +54,38 @@ class CustomBackend(ModelBackend):
 '''
 class IndexView(View):
     def get(self, request):
-
+        
+        #左下文件，分页模块
+        page = request.GET.get('page',1)
+        
         #轮播图资源
         all_banners = BannerModel.objects.all().order_by('-add_time')
         #左侧文件资源
         all_file1s = File1Model.objects.all().order_by('-add_time')
+        
+        file1_names = [os.path.splitext(os.path.basename(file.file1.name))[0] for file in all_file1s]
+        #分页器，显示5个
+        paginator = Paginator(list(zip(all_file1s,file1_names)),5)
+        
+        try:
+            current_page = paginator.page(page)
+        except PageNotAnInteger:
+        # 如果页码不是整数，返回第一页
+            current_page = paginator.page(1)
+        except EmptyPage:
+        # 如果页码超出范围，返回第一页
+            current_page = paginator.page(1)
+       
+       
         numbers = range(1,9)
         context = {
             'all_banners': all_banners,
-            'all_file1s':all_file1s,
+            #'all_file1s':all_file1s,
             'MEDIA_URL': settings.MEDIA_URL,
             'numbers': numbers,
+           # 'file1_names': file1_names,
+            'current_page':current_page,
+            'total_pages':paginator.num_pages,
         }
 
         return render(request, "index.html", context)
