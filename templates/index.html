@@ -102,6 +102,9 @@
             <li><a class="act2" href="{% url 'home' %}">首页</a></li>
 
             <li><a href="{% url 'info:infolist' %}" target="_blank">研究报告</a></li>
+            <li><a href="{% url 'info:infolist' %}" target="_blank">奥维数据</a></li>
+            <li><a href="{% url 'info:infolist' %}" target="_blank">院内报告</a></li>
+            <li><a href="{% url 'info:infolist' %}" target="_blank">新品月报</a></li>
      
         </ul>
     </div>
@@ -112,74 +115,74 @@
 <!--轮播图的样式表，先放在这里面后处理 -->
     <style>
 
-.prev {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
-    left:10px;
-}
-.prev:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-     color: #fff;
+        .prev {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
+        left:10px;
+        }
+        .prev:hover{
+        background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
 
-}
+        }
 
-.next{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    z-index: 100;
-    right:10px;
-}
-.next:hover{
-    background-color: rgba(0, 0, 0, 0.8);
-}
+        .next{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        z-index: 100;
+        right:10px;
+        }
+        .next:hover{
+        background-color: rgba(0, 0, 0, 0.8);
+        }
 
 
-.slides {  
-        display: flex; /* 使用 flexbox 布局 */  
-        overflow: hidden; /* 隐藏超出部分 */  
-}  
-    
-.slides li {  
-        list-style: none; /* 去掉默认的列表样式 */  
-        flex: 0 0 100%; /* 每个 li 占据 100% 的宽度 */  
-        position: relative; /* 为了定位标题 */  
-}  
-    
-.slides img {  
-        width: 100%; /* 图片宽度占满容器 */  
-        display: block; /* 去掉图片底部的空白间隙 */  
-}  
-    
-.img_title {  
-        position: absolute; /* 绝对定位标题 */  
-       width:30%;
-        
-        background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
-        color: #fff; /* 白色文字 */  
-        padding: 5px 10px; /* 内边距 */  
-       
-        font-size: 16px; /* 字体大小 */  
-        z-index: 1;
-}
-    /* 使用更具体的选择器来提高优先级 */  
-/* 针对 img_title 的 hover */  
-a .img_title:hover,  
-.img_title:hover {  
-    color: #2970b9; /* 鼠标悬浮时字体变红 */  
-}  
+        .slides {  
+            display: flex; /* 使用 flexbox 布局 */  
+            overflow: hidden; /* 隐藏超出部分 */  
+        }  
+
+        .slides li {  
+            list-style: none; /* 去掉默认的列表样式 */  
+            flex: 0 0 100%; /* 每个 li 占据 100% 的宽度 */  
+            position: relative; /* 为了定位标题 */  
+        }  
+
+        .slides img {  
+            width: 100%; /* 图片宽度占满容器 */  
+            display: block; /* 去掉图片底部的空白间隙 */  
+        }  
+
+        .img_title {  
+            position: absolute; /* 绝对定位标题 */  
+            width:30%;
+            
+            background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
+            color: #fff; /* 白色文字 */  
+            padding: 5px 10px; /* 内边距 */  
+            
+            font-size: 16px; /* 字体大小 */  
+            z-index: 1;
+        }
+        /* 使用更具体的选择器来提高优先级 */  
+        /* 针对 img_title 的 hover */  
+        a .img_title:hover,  
+        .img_title:hover {  
+        color: #2970b9; /* 鼠标悬浮时字体变红 */  
+        }  
 
     </style>
 
@@ -280,33 +283,120 @@ startSlide();
 
 
 
-    <div class="content3 margin_bottom0 content2023">
-
-        <table>
-
-        </table>
+<!--添加展示功能-->
 
 
+<div class="content3">
 
-        <div class="service service2023" id="report_1">
+    <div class="content_title" style="width: 1200px;margin: 0 auto;">
+        <span>近期活动</span>
+        <div class="line1"></div>
+        <div class="more">
+            <a href="#" target="_blank">
+                <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
+            </a>
+        </div>
+    </div>
 
-            <div class="content_title">
-                <span>政策宣发</span>
-                <div class="line1 width-bod96"></div>
-                <div class="more">
-                    <!--添加分页功能-->
-                    {% if current_page.has_next %}
-                    <a href="?page={{ current_page.next_page_number }}" >
-                        <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
-                    </a>
-                    {% else %}
-                    <a href="?page=1" >
-                        <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
-                    </a>
-                    {% endif %}
+    <div>
+        <div class="special_broadcast">
+            <a class="special_direction_left fl" id="direction_left"></a>
+            <!--新闻信息的主题-->
+            <ul class="special_broadcast_list fl" id="broadcast_contentimg" style="width: 1200px;">
+                <div style="zoom: 1; width: 32766px;">
+                    {% for news in news_items %}
+                    <div style="float: left;">
+                        <li>
+                            <a href="{% url 'info:news_detail' news.id %}" title="{{ news.title }}" target="_blank">
+                                <img src="{{ news.image.url }}" alt="{{ news.title }}">
+                            </a>
+                        </li>
+                    </div>
+                    {% endfor %}
                 </div>
-            </div>
+            </ul>
 
+            <a class="special_direction_right fl" id="direction_right"></a>
+        <div class="clear"></div>
+    </div>
+
+
+
+
+
+
+<input type="hidden" value="正常情况">
+
+    </div>
+</div>
+
+
+
+
+
+<div class="content3 margin_bottom0 content2023">
+    <div class="free_report free_report2023">
+        <div class="content_title">
+            <span>情报页面</span>
+            <div class="line1 width-bod96"></div>
+            <div class="more po_r4">
+                <a href="#" target="_blank">
+                    <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="free_report_content2">
+            <ul>
+                {% for number in numbers %}
+                <li>
+                    <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
+                        <div class="free_report_img2">
+                            <img src="/static/it/img/report_01.jpg" alt="#">
+                        </div>
+                    </a>
+                    <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
+                        <div class="free_report_title2">《扫地机器人行业算法现状、问题以及未来方向》报告</div>
+                    </a>
+                    <div class="hot_news_tips margin_top2">
+                        <img class="margin_left_8" src="/static/it/img/tip_03.jpg" alt="">
+                        <a href="#" target="_blank" title="#">家电材料</a>
+                    </div>
+                </li>
+              
+               {% endfor %}
+                           
+                           
+                            
+                            
+                            
+                           
+
+                <div class="clear_float"></div>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="service service2023">
+        <div class="content_title">
+            <span>文件排版1</span>
+            <div class="line1 width-bod96"></div>
+            <div class="more">
+                <!--添加分页功能-->
+                {% if current_page.has_next %}
+                <a href="?page={{ current_page.next_page_number }}" >
+                    <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
+                </a>
+                {% else %}
+                <a href="?page=1" >
+                    <img src="{% static 'it/img/arrow_right.jpg' %}" alt="">
+                </a>
+                {% endif %}
+            </div>
+        </div>
+
+
+        
             <div class="content_box4">
                 <div class="listed-companies-content">
                     {% for file1, file_name in current_page.object_list %}
@@ -329,70 +419,48 @@ startSlide();
                     {% endfor %}
                 </div>
             </div>
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div class="free_report free_report2023" id="report_2">
-            <div class="content_title">
-                <span>文件待上传</span>
-                <div class="line1 width-bod96"></div>
-                <div class="more po_r4">
-                    <a href="#" target="_blank">
-                        <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="free_report_content2">
-                <ul>
-                    {% for number in numbers %}
-                    <li>
-                        <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
-                            <div class="free_report_img2">
-                                <img src="/static/it/img/report_01.jpg" alt="#">
-                            </div>
-                        </a>
-                        <a href="#" target="_blank" title="《扫地机器人行业算法现状、问题以及未来方向》报告">
-                            <div class="free_report_title2">《扫地机器人行业算法现状、问题以及未来方向》报告</div>
-                        </a>
-                        <div class="hot_news_tips margin_top2">
-                            <img class="margin_left_8" src="/static/it/img/tip_03.jpg" alt="">
-                            <a href="#" target="_blank" title="#">家电材料</a>
-                        </div>
-                    </li>
-                  
-                   {% endfor %}
-                 
-                  
-                    
-
-
-
-
-                    <div class="clear_float"></div>
-                </ul>
-            </div>
-        </div>
-
-
-
-
-        <div class="clear_float"></div>
     </div>
 
+    <div class="clear_float"></div>
+</div>
 
+
+
+
+
+
+    <div class="content1 border1">
+
+        <div class="content_title">
+            <span>待补充</span>
+            <div class="line1"></div>
+        </div>
+    
+        <div class="hot_news">
+            <ul>
+                          
+                           
+                            <li class=" margin_left35  ">
+                                <div class="hot_news_img">
+                                    <a href="#  " target="_blank" title="#">
+                                        <img src="{% static 'img_add/default.png' %}" alt="#">
+                                    </a>
+                                </div>
+                                <div class="hot_news_title"><a href="#" target="_blank" title="#">待添加</a></div>
+                                <div class="hot_news_tips">
+                                    <img src="{% static 'img_add/tick4.png' %}" alt="">
+                                                <a href="#" target="_blank" title="#"></a>
+    
+    
+                                    <span>2024-12-13</span>
+                                </div>
+                            </li>
+    
+                <div class="clear_float"></div>
+            </ul>
+        </div>
+    
+    </div>
     
 
     <script src="/static/it/js/jquery.flexslider-min.js"></script>

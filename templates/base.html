@@ -47,57 +47,57 @@
     <style>
         /* 改变导航栏布局位置 */
         
-        #search_div {
-            margin-top: 15px;
-            margin-left: 100px;
-        }
-        
-        #fire_img {
-            width: 15%;
-        }
-        /* 改变热门质量报告位置 */
+    #search_div {
+        margin-top: 15px;
+        margin-left: 100px;
+    }
+    
+    #fire_img {
+        width: 15%;
+    }
+    /* 改变热门质量报告位置 */
 
 
 
-        
-          .dropdown {
-            position: relative;
-            display: inline-block;
-        }
+    
+        .dropdown {
+        position: relative;
+        display: inline-block;
+    }
 
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #0d09eb;
-            min-width: 80px;
-            {#min-width: 160px;#}
-            box-shadow: 0px 8px 16px 0px rgba(220, 25, 25, 0.2);
-            z-index: 1;
-        }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #0d09eb;
+        min-width: 80px;
+        {#min-width: 160px;#}
+        box-shadow: 0px 8px 16px 0px rgba(220, 25, 25, 0.2);
+        z-index: 1;
+    }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-            background-color: #1d3dbb;
-        }
+    .dropdown:hover .dropdown-content {
+        display: block;
+        background-color: #1d3dbb;
+    }
 
 
 
-        .dropdown-content a {
-            color: #ffffff;
-            padding: 12px 10px;
-            text-decoration: none;
-            display: block;
-        }
+    .dropdown-content a {
+        color: #ffffff;
+        padding: 12px 10px;
+        text-decoration: none;
+        display: block;
+    }
 
-        .dropdown-content a:hover {
-            background-color: #5395ec;
-            /* 悬停时更改链接背景色 */
-        }
+    .dropdown-content a:hover {
+        background-color: #5395ec;
+        /* 悬停时更改链接背景色 */
+    }
 
-        .dropdown  {
-            padding: 10px 20px;
-            cursor: pointer;
-        }
+    .dropdown  {
+        padding: 10px 20px;
+        cursor: pointer;
+    }
 
 
 
@@ -178,9 +178,10 @@
 
 
     <!--header-top start-->
-    <div class="header1" style="height:32px">
-        <div class="header-top">
-            <div class="header-top-left fl">
+<div class="header1" style="height:32px">
+    <div class="header-top">
+
+        <div class="header-top-left fl">
                 <a href="{% url 'home' %}" target="_blank">
 
                     
@@ -188,54 +189,53 @@
                     <span>首页</span>
                 </a>
 
+        </div>
+
+        
+
+        <div class="header-top-right fr " style="min-width: 150px; max-height: 32px; margin-top:-5px">
+
+            <a href="{% url 'user:need' %}" target="_blank" >
+                <img src="{% static 'it/img/bookshelf.svg' %}" width="20" height="32"> 情报需求
+            </a>
+
+            <div class="dropdown">
+
+                {% if request.user.is_authenticated %}
+                
+
+                    <div class="user-info">
+                        {% if request.user.avatar %}
+                        <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" style="margin-top: -10px">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" style="margin-top: -10px">
+                        {% endif %}
+
+                        <span style="color: white; ">{{ user.username }}</span>
+                    </div>
+
+                    <div class="dropdown-content">
+                                <a href="{% url 'user:userinfo' %}">个人中心</a>
+                                <a href="{% url 'logout' %}">退出登录</a>
+                    </div>
+                    
+                {% else   %}
+                
+                    <a href="{%  url 'login' %}" target="_blank" style=" margin-top:-5px " class="user-info">
+                        <img src="{% static 'it/img/person-fill-check.svg' %}" width="30" height="30" >
+                        <span style="color: white; ">登录/注册</span>
+                    </a>    
+
+                {% endif %}
+
             </div>
 
-
-
-            <div class="header-top-right fr " style="min-width: 150px; max-height: 32px; margin-top:-5px">
-
-
-
-<div class="dropdown">
-
-    {% if request.user.is_authenticated %}
-        
-        <div class="user-info">
-            {% if request.user.avatar %}
-             <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" style="margin-top: -10px">
-            {% else %}
-            <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" style="margin-top: -10px">
-            {% endif %}
-
-             <span style="color: white; ">{{ user.username }}</span>
+ 
+              
         </div>
 
-        <div class="dropdown-content">
-                     <a href="{% url 'user:userinfo' %}">个人中心</a>
-                     <a href="{% url 'logout' %}">退出登录</a>
-        </div>
-        
-    {% else   %}
-      
-        <a href="{%  url 'login' %}" target="_blank" style=" margin-top:-5px " class="user-info">
-             <img src="{% static 'it/img/person-fill-check.svg' %}" width="30" height="30" >
-             <span style="color: white; ">登录/注册</span>
-        </a>    
-  
-    
-    {% endif %}
-
-</div>
-
-   
-            
-            
-            </div>
-
-
-
-        </div>
     </div>
+</div>
 
 
 
@@ -256,6 +256,10 @@
 
 
 
+<input type="hidden" value="正常情况">
+
+    </div>
+</div>
 
 
 
@@ -339,8 +343,6 @@
                     footer: 'my-swal-footer'  
                 },
                 width: '400px'   
-            }).then(function() {  
-                window.scrollTo(0, currentScrollPosition);  
             });  
         }
     </script>

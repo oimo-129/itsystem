@@ -13,6 +13,11 @@ class FileModelAdmin(admin.ModelAdmin):
 class File1ModelAdmin(admin.ModelAdmin):
     pass
 
+#新闻，测试看看效果
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ('title', 'pub_date')
+    search_fields = ('title', 'content')
 
 #轮播图后台管理
 admin.site.register(BannerModel, BaseInfoAdmin)

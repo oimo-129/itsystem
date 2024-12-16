@@ -36,6 +36,10 @@ from info.models import *
 #分页功能
 from django.core.paginator import Paginator
 
+#消息提示
+from django.contrib import messages
+
+
 #登录验证
 class CustomBackend(ModelBackend):
 
@@ -60,6 +64,8 @@ class IndexView(View):
         
         #轮播图资源
         all_banners = BannerModel.objects.all().order_by('-add_time')
+        #添加新闻列表
+        news_items = News.objects.all().order_by('-pub_date')
         #左侧文件资源
         all_file1s = File1Model.objects.all().order_by('-add_time')
         
@@ -86,6 +92,7 @@ class IndexView(View):
            # 'file1_names': file1_names,
             'current_page':current_page,
             'total_pages':paginator.num_pages,
+            'news_items':news_items,
         }
 
         return render(request, "index.html", context)
@@ -295,5 +302,40 @@ class UserInfoNeed(LoginRequiredMixin, View):
 
         return render(request, 'center_need.html', context)
 
-    
+    def post(self, request):
+            try:
+            # 创建新的需求表单记录
+                need_form = NeedForm(
+                    user=request.user,
+                    section=request.POST.get('section'),
+                    analysis_type=request.POST.get('analysis_type'),
+                    analysis_detail=request.POST.get('analysis_detail'),
+                    urgency=request.POST.get('urgency'),
+                    content=request.POST.get('content'),
+                    department=request.POST.get('department'),
+                    contact_person=request.POST.get('contact_person'),
+                    contact_info=request.POST.get('contact_info')
+                )
+                need_form.save()
+            
+            # 添加成功消息
+                messages.success(request, '需求表单提交成功！')
+                return redirect('user:need')  # 重定向到需求页面
+                
+            except Exception as e:
+                # 如果保存失败，添加错误消息
+                messages.error(request, f'提交失败：{str(e)}')
+                
+                # 返回表单页面，保留用户输入的数据
+                desp_back = Department.objects.values('name')
+                context = {
+                    'username': request.user.username,
+                    'desp_front': desp_back,
+                    'email_front': request.user.email,
+                    'MEDIA_URL': settings.MEDIA_URL,
+                    'form_data': request.POST,  # 保留用户输入的数据
+                    'error': str(e)
+                }
+                return render(request, 'center_need.html', context)
+
 

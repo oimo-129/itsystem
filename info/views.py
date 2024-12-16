@@ -22,7 +22,7 @@ import mimetypes
 #查询模块
 from django.db.models import Q
 
-from .models import FileModel,BannerModel
+from .models import FileModel,BannerModel,File1Model,News
 #时间模块
 from datetime import datetime,timedelta
 
@@ -174,8 +174,8 @@ class File1DownloadView(View):
     
    
     def get(self, request, file_id):
-        file_obj = get_object_or_404(BannerModel, id=file_id)
-        file_path = file_obj.file_banner.path
+        file_obj = get_object_or_404(File1Model, id=file_id)
+        file_path = file_obj.file1.path
 
         try:
             filename = os.path.basename(file_path)
@@ -193,3 +193,15 @@ class File1DownloadView(View):
         except FileNotFoundError:
             raise Http404("文件未找到")
 
+
+'''
+首页新闻显示
+'''
+
+def news_list(request):
+    news_items = News.objects.all()
+    return render(request, 'index.html', {'news_items': news_items})
+
+def news_detail(request, news_id):
+    news = get_object_or_404(News, id=news_id)
+    return render(request, 'news_detail.html', {'news': news})

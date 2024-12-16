@@ -50,6 +50,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles', 
     'user.apps.UserConfig',
     'info.apps.InfoConfig',
+    #'ckeditor',
+    #'ckeditor_uploader',
+    'django_ckeditor_5',
+    #'django_ckeditor_5_uploader',
 ]
 
 #AUTH_USER_MODEL = 'demotest.UserTest'
@@ -137,6 +141,37 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
+#富文本编辑
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', '|',
+            'bulletedList', 'numberedList', '|',
+            'alignment', '|',
+            'link', 'imageUpload', '|',
+            'undo', 'redo', '|',
+            'removeFormat', 'paste', 'pasteFromWord', '|',  # 添加paste相关功能
+        ],
+        'removePlugins': ['Title'],
+        'image': {
+            'toolbar': ['imageTextAlternative', '|', 'imageStyle:alignLeft', 
+                       'imageStyle:alignCenter', 'imageStyle:alignRight'],
+            'styles': [
+                'alignLeft', 'alignCenter', 'alignRight'
+            ]
+        },
+        'height': '300px',
+        'width': '100%',
+        'removeFormatAttributes': '',
+        'forcePasteAsPlainText': False,  # 允许保留一些基本格式
+    }
+}
+# 文件上传配置
+CKEDITOR_5_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
+CKEDITOR_5_UPLOAD_PATH = "uploads/"  # 媒体文件会上传到 media/uploads/
+# 允许的HTML标签和属性
+#CKEDITOR_5_CUSTOM_CSS = 'path_to_custom.css'  # 可选，自定义CSS
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
@@ -149,6 +184,7 @@ STATICFILES_DIRS = (
 #媒体文件根目录
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+#CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

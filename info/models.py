@@ -8,8 +8,9 @@ from django.utils import timezone
 
 from datetime import datetime
 # 项目的第二个应用，用于资源添加处理
-
-
+#富文本编辑器
+from django_ckeditor_5.fields import CKEditor5Field
+#from ckeditor.fields import RichTextField
 #用于上传文件
 def upload_to(instance, filename):
     today = datetime.today()
@@ -96,3 +97,23 @@ class FileModel(models.Model):
 
 
 
+
+'''
+    点击链接，显示管理员编辑好的新闻内容    
+'''
+class News(models.Model):
+    title = models.CharField('标题', max_length=200)
+    content = CKEditor5Field('内容', config_name='default')
+    #content = RichTextField('新闻内容')
+    image = models.ImageField('新闻图片', upload_to='news_images/')
+    pub_date = models.DateTimeField('发布时间', auto_now_add=True)
+    
+     
+    class Meta:
+        ordering = ['-pub_date']
+        verbose_name = '新闻'
+        verbose_name_plural = '新闻管理'
+
+    def __str__(self):
+        return self.title
+    

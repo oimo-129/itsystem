@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+{% block custom %}
+
+<style>
+.news-detail {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.news-detail h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.news-meta {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.news-content {
+    line-height: 1.8;
+    font-size: 16px;
+}
+</style>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<div class="news-detail">
+    <h1>{{ news.title }}</h1>
+    <div class="news-meta">
+        <span>发布时间：{{ news.pub_date|date:"Y-m-d H:i" }}</span>
+    </div>
+    <div class="news-content">
+        {{ news.content|safe }}
+    </div>
+</div>
+{% endblock %}

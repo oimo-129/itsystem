@@ -76,18 +76,30 @@
 <div class=" personal_des container mt-3">
 
 
+    {% if messages %}
+    <div class="messages" style="margin: 20px 0;">
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
 
-    <form>
+
+    <form method="post" action="{% url 'user:need' %}">
 
 
         <div class="row mb-4"  >
             <div class="col" style="display: flex; align-items: center; margin-right:20px;">
-                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">涉及板块：</label>
-                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="section" class="form-label " style="white-space: nowrap ; margin-right:5px;">涉及板块：</label>
+                <input type="text" class="form-control " id="section" placeholder="待输入 " name="section" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
-                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">分析大类：</label>
-                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="analysis_type" class="form-label " style="white-space: nowrap ; margin-right:10px;">分析大类：</label>
+                <input type="text " class="form-control " id="analysis_type" placeholder="待输入 " name="analysis_type" required>
             </div>
         </div>
 
@@ -95,16 +107,16 @@
 
         <div class="row mb-4">
             <div class="col" style="display: flex; align-items: center; margin-right:20px;">
-                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">分析细类：</label>
-                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="analysis_detail" class="form-label " style="white-space: nowrap ; margin-right:5px;">分析细类：</label>
+                <input type="text" class="form-control " id="analysis_detail" placeholder="待输入 " name="analysis_detail" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
-                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">紧急程度：</label>
-                <select class="form-select"  style="color: lightgray;" onchange="this.style.color = 'black';">
+                <label for="urgency" class="form-label " style="white-space: nowrap ; margin-right:10px;">紧急程度：</label>
+                <select class="form-select" id="urgency"name="urgency" style="color: lightgray;" onchange="this.style.color = 'black';" required>
                     <option value="" disabled selected >请选择</option> <!-- 默认选项 --> 
-                    <option>非常紧急（需3天内完成）</option>
-                    <option>较紧急（3-7天）</option>
-                    <option>一般紧急（7天以上）</option>
+                    <option value="very">非常紧急（需3天内完成）</option>
+                    <option value="moderate">较紧急（3-7天）</option>
+                    <option value="normal">一般紧急（7天以上）</option>
                   </select>
                   
             </div>
@@ -112,23 +124,23 @@
 
 
         <div class="mb-4 mt-6 ">
-            <label class="mb-3" for="comment">具体内容：</label>
-            <textarea class="form-control" rows="4" id="comment" name="text"></textarea>
+            <label class="mb-3" for="content">具体内容：</label>
+            <textarea class="form-control" rows="4" id="content" name="content" required></textarea>
         </div>
 
         
         <div class="row">
             <div class="col" style="display: flex; align-items: center; margin-right:20px;">
-                <label for="date" class="form-label " style="white-space: nowrap ; margin-right:5px;">需求科室：</label>
-                <input type="text" class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="department" class="form-label " style="white-space: nowrap ; margin-right:5px;">需求科室：</label>
+                <input type="text" class="form-control " id="department" placeholder="待输入 " name="department" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
-                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">对接人员：</label>
-                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="contact_person" class="form-label " style="white-space: nowrap ; margin-right:10px;">对接人员：</label>
+                <input type="text " class="form-control " id="contact_person" placeholder="待输入 " name="contact_person" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
-                <label for=" date " class="form-label " style="white-space: nowrap ; margin-right:10px;">联系方式：</label>
-                <input type="text " class="form-control " id="date " placeholder="待输入 " name="date ">
+                <label for="contact_info" class="form-label " style="white-space: nowrap ; margin-right:10px;">联系方式：</label>
+                <input type="text " class="form-control " id="contact_info" placeholder="待输入 " name="contact_info" required>
             </div>
 
         </div>

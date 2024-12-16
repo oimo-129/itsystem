@@ -51,6 +51,9 @@ urlpatterns = [
     path('user/', include('user.urls', namespace='user')),
 #上传的信息模块
     path('info/', include('info.urls', namespace='info')),
+#用于新闻上传的富文本    
+    # path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('ckeditor5/', include('django_ckeditor_5.urls')),
 ]
 
 if settings.DEBUG:

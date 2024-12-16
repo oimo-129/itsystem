@@ -15,6 +15,7 @@ urlpatterns = [
     path('avatar/upload/', UploadImageView.as_view(), name="upload_avatar"),
     #个人中心修改密码
     path('update/pwd/',UpdatePwdView.as_view(),name="update_pwd")
+    
 
 
 ]

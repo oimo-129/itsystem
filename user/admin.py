@@ -6,6 +6,13 @@ from .models import UserProfile, Department,NeedForm
 #添加用户请求管理模块
 from openpyxl import Workbook
 from django.http import HttpResponse
+#处理url编码
+from urllib.parse import quote
+#加上时间
+from datetime import datetime
+#处理excel
+from openpyxl.styles import Font, PatternFill, Alignment, Border, Side
+from openpyxl.utils import get_column_letter
 
 # 自定义用户修改表单  
 class CustomUserChangeForm(UserChangeForm):  
@@ -98,21 +105,72 @@ class NeedFormAdmin(admin.ModelAdmin):
         response = HttpResponse(
             content_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
         )
-        response['Content-Disposition'] = 'attachment; filename="need_forms.xlsx"'
+        
+        # 设置文件名
+        current_time = datetime.now().strftime('%Y年%m月%d日')
+        filename = f'家电一院情报需求_{current_time}.xlsx'
+        encoded_filename = quote(filename)
+        response['Content-Disposition'] = f'attachment; filename*=UTF-8\'\'{encoded_filename}'
         
         wb = Workbook()
         ws = wb.active
         ws.title = "需求表单"
         
-        # 写入表头
+        # 定义表头
         columns = [
             '用户名', '提交时间', '涉及板块', '分析大类', '分析细类',
             '紧急程度', '具体内容', '需求科室', '对接人员', '联系方式'
         ]
-        ws.append(columns)
         
-        # 写入数据
-        for obj in queryset:
+        # 设置列宽（根据需要调整数值）
+        column_widths = {
+            '用户名': 15,
+            '提交时间': 20,
+            '涉及板块': 15,
+            '分析大类': 15,
+            '分析细类': 15,
+            '紧急程度': 25,
+            '具体内容': 40,
+            '需求科室': 15,
+            '对接人员': 15,
+            '联系方式': 20,
+        }
+        
+        # 写入表头并设置样式
+        for col_num, column_title in enumerate(columns, 1):
+            cell = ws.cell(row=1, column=col_num)
+            cell.value = column_title
+            
+            # 设置表头样式
+            cell.font = Font(
+                name='微软雅黑',
+                bold=True,
+                size=11,
+                color='000000'  # 黑色
+            )
+            cell.fill = PatternFill(
+                start_color='CCE5FF',  # 浅蓝色背景
+                end_color='CCE5FF',
+                fill_type='solid'
+            )
+            cell.alignment = Alignment(
+                horizontal='center',
+                vertical='center',
+                wrap_text=True
+            )
+            cell.border = Border(
+                left=Side(style='thin'),
+                right=Side(style='thin'),
+                top=Side(style='thin'),
+                bottom=Side(style='thin')
+            )
+            
+            # 设置列宽
+            column_letter = get_column_letter(col_num)
+            ws.column_dimensions[column_letter].width = column_widths[column_title]
+        
+        # 写入数据并设置样式
+        for row_num, obj in enumerate(queryset, 2):
             row = [
                 obj.user.username,
                 obj.submit_time.strftime('%Y-%m-%d %H:%M'),
@@ -125,20 +183,27 @@ class NeedFormAdmin(admin.ModelAdmin):
                 obj.contact_person,
                 obj.contact_info
             ]
-            ws.append(row)
+            
+            for col_num, value in enumerate(row, 1):
+                cell = ws.cell(row=row_num, column=col_num)
+                cell.value = value
+                
+                # 设置数据单元格样式
+                cell.font = Font(name='微软雅黑', size=10)
+                cell.alignment = Alignment(
+                    horizontal='left',
+                    vertical='center',
+                    wrap_text=True
+                )
+                cell.border = Border(
+                    left=Side(style='thin'),
+                    right=Side(style='thin'),
+                    top=Side(style='thin'),
+                    bottom=Side(style='thin')
+                )
         
-        # 调整列宽
-        for column in ws.columns:
-            max_length = 0
-            column = list(column)
-            for cell in column:
-                try:
-                    if len(str(cell.value)) > max_length:
-                        max_length = len(str(cell.value))
-                except:
-                    pass
-            adjusted_width = (max_length + 2)
-            ws.column_dimensions[column[0].column_letter].width = adjusted_width
+        # 冻结表头
+        ws.freeze_panes = 'A2'
         
         wb.save(response)
         return response
