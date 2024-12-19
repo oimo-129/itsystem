@@ -17,7 +17,7 @@
         <div class="wp header-box">
             <p class="fl hd-tips">家电一院情报系统/注册</p>
             <ul class="fr hd-bar">
-{#                <li>服务电话：<span>4001008031</span></li>#}
+
                 <li><a href="/login/">[登录]</a></li>
                 <li class="active"><a href="/register/">[注册]</a></li>
             </ul>
@@ -66,37 +66,36 @@
                 <div class="tab-form">
                     <form id="email_register_form" method="post" action="{% url 'resign' %}" autocomplete="off">
 
-                        <input type='hidden' name='csrfmiddlewaretoken' value='gTZljXgnpvxn0fKZ1XkWrM1PrCGSjiCZ' />
-
-                        <div class="form-group marb20 {% if register_form.errors.email %}errorput{% endif %}">
+               
+                        <div class="form-group marb20 {% if register_form.errors.username %}errorput{% endif %}">
 
                             <label>用&nbsp;&nbsp;户&nbsp;&nbsp;名</label>
-                            <input  type="text" id="id_email" name="email" value="{{ register_form.email.value }}" placeholder="格力内邮账号：**@gree.com" />
+                            <input  type="text" id="id_username" name="username" value="{{ register_form.username.value }}" placeholder="请输入用户名" />
                         </div>
-
+                
                         <div class="form-group marb20 {% if register_form.errors.email %}errorput{% endif %}">
 
                             <label>邮&nbsp;&nbsp;箱&nbsp;&nbsp;号</label>
-                            <input  type="text" id="id_email" name="email" value="{{ register_form.email.value }}" placeholder="格力内邮账号：**@gree.com" />
+                            <input  type="text" id="id_email" name="email" value="{{ register_form.email.value }}" placeholder="格力内邮账号" />
                         </div>
 
-                        <div class="form-group marb20 {% if register_form.errors.email %}errorput{% endif %}">
+                        
+                        <div class="form-group marb20 {% if register_form.errors.department %}errorput{% endif %}">
 
-                            <label>所&nbsp;&nbsp;在&nbsp;&nbsp;科室</label>
-                            <input  type="text" id="id_email" name="email" value="{{ register_form.email.value }}" placeholder="格力内邮账号：**@gree.com" />
+                            <label>科&nbsp;&nbsp;&nbsp;&nbsp;室</label>
+                            <select class="form-control form-group" id="id_department" name="department" required>
+                                <option value="" disabled selected>请选择科室</option>
+                                {% for desp in desp_back %}
+                                    <option value="{{ desp.id }}">{{ desp.name }}</option>
+                                {% endfor %}
+                        
+                            </select>
                         </div>
-
+                    
                         <div class="form-group marb8 {% if register_form.errors.password %}errorput{% endif %}">
                             <label>密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码</label>
                             <input type="password" id="id_password" name="password"  value="{{ register_form.password.value }}" placeholder="请输入6-20位非中文字符密码" />
                         </div>
-
-
-                        {% comment %} <div class="form-group marb8 captcha1 {% if register_form.errors.captcha %}errorput{% endif %}">
-                            <label>验&nbsp;证&nbsp;码</label>
-                            {{ register_form.captcha }}
-                        </div> {% endcomment %}
-
 
                     
                     
@@ -114,7 +113,7 @@
 
 
                         <input class="btn btn-green" id="jsEmailRegBtn" type="submit" value="注册" />
-                    {% csrf_token %}
+
                     </form>
 
 

@@ -8,18 +8,15 @@ from .models import *
 
 #验证注册
 class ResignForm(forms.Form):
-    email = forms.EmailField(
+    username = forms.CharField(
+                        required=True,
+                        error_messages={
+                            'required': '请输入用户名'
+                        })
+    email = forms.CharField(
                             required=True,
-                             validators=[
-                                 RegexValidator(
-                                     regex=r'^[a-zA-Z0-9_.+-]+@gree\.com$',
-                                     message='不符合格力内邮账号样式',
-                                     code = 'invalid_email'
-                                 )
-                             ],
-                             error_messages={  
-                                'required': '请输入邮箱地址',  
-                                'invalid': '请输入有效的邮箱地址'  
+                            error_messages={  
+                                'required': '请输入邮箱地址'
                             }  
                             )
     password = forms.CharField(
@@ -32,6 +29,15 @@ class ResignForm(forms.Form):
                              'max_length': '密码长度不能超过20位'  
                         })
     
+    department = forms.ModelChoiceField(
+        queryset=Department.objects.all(),
+        required=True,
+        empty_label="请选择科室",  # 设置默认空选项的文本
+        error_messages={
+            'required': '请选择所属科室',
+            'invalid_choice': '请选择有效的科室'
+        }
+    )
 
 
 

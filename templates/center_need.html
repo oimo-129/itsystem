@@ -132,11 +132,11 @@
         <div class="row">
             <div class="col" style="display: flex; align-items: center; margin-right:20px;">
                 <label for="department" class="form-label " style="white-space: nowrap ; margin-right:5px;">需求科室：</label>
-                <input type="text" class="form-control " id="department" placeholder="待输入 " name="department" required>
+                <input type="text" class="form-control " id="department" placeholder="{{ user.desp_name }} " name="department" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
                 <label for="contact_person" class="form-label " style="white-space: nowrap ; margin-right:10px;">对接人员：</label>
-                <input type="text " class="form-control " id="contact_person" placeholder="待输入 " name="contact_person" required>
+                <input type="text " class="form-control " id="contact_person" placeholder="{{ user.username }}" name="contact_person" required>
             </div>
             <div class="col" style="display: flex; align-items: center;">
                 <label for="contact_info" class="form-label " style="white-space: nowrap ; margin-right:10px;">联系方式：</label>

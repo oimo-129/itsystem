@@ -44,7 +44,9 @@ class InfoView(LoginRequiredMixin,View):
         #搜索关键词
         keyword = request.GET.get('keyword', '').strip()
         #时间内搜索参数
-        selected_date = request.GET.get('selected_date')  
+        selected_date = request.GET.get('selected_date')
+        #添加首页传回来的选项
+        file_id = request.GET.get('file_id')  
         
         # 构建基础查询  
         files = FileModel.objects.all() 
@@ -88,8 +90,10 @@ class InfoView(LoginRequiredMixin,View):
         except:
             current_page = paginator.page(1)
             files_page = current_page.object_list
-
-        context = {
+        
+        if file_id:
+            target_file = FileModel.objects.get(id=file_id)
+            context = {
             'page_size': page_size,
             'files': files_page,
             'total_files': len(files),
@@ -97,8 +101,22 @@ class InfoView(LoginRequiredMixin,View):
             'MEDIA_URL': settings.MEDIA_URL,
             'current_category': category,
             'keyword': keyword,
-            'selected_date': selected_date, 
+            'selected_date': selected_date,
+            'target_file':target_file,
+            'file_id':file_id, 
         }
+            
+        else:
+            context = {
+                'page_size': page_size,
+                'files': files_page,
+                'total_files': len(files),
+                'username': request.user.username,
+                'MEDIA_URL': settings.MEDIA_URL,
+                'current_category': category,
+                'keyword': keyword,
+                'selected_date': selected_date, 
+            }
 
         return render(request, "product.html", context)
 

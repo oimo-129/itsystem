@@ -872,3 +872,306 @@
 2024-12-16 08:43:45,786 WARNING Not Found: /static/boot_js/bootstrap.bundle.js
 2024-12-16 08:44:48,243 WARNING Not Found: /static/boot_css/bootstrap.css
 2024-12-16 08:44:48,247 WARNING Not Found: /static/boot_js/bootstrap.bundle.js
+2024-12-18 01:58:29,179 INFO Serving on http://127.0.0.1:8000
+2024-12-18 01:59:06,957 INFO Serving on http://127.0.0.1:8000
+2024-12-18 01:59:20,710 INFO Serving on http://127.0.0.1:8000
+2024-12-18 02:00:14,175 WARNING Not Found: /favicon.ico
+2024-12-18 03:30:48,434 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:48,438 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:48,447 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:48,547 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:48,551 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:48,557 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:49,056 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:53,945 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:53,950 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:53,958 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:54,003 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:54,004 WARNING Task queue depth is 1
+2024-12-18 03:30:54,007 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:54,007 WARNING Task queue depth is 2
+2024-12-18 03:30:54,009 WARNING Task queue depth is 1
+2024-12-18 03:30:54,014 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:54,742 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:54,747 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:54,752 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:54,794 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:54,798 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:54,804 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:56,681 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:56,686 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:56,690 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:56,733 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:56,739 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:56,746 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:57,782 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:57,787 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:57,791 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:57,831 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:57,837 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:57,843 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:59,192 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:30:59,200 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:30:59,203 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:30:59,239 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:30:59,242 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:30:59,246 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:31:08,779 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:31:08,784 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:31:08,790 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:31:08,793 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:31:08,828 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:31:08,832 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:32:46,063 WARNING Not Found: /static/plugin/toastr/toastr.js.map
+2024-12-18 03:38:00,489 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:38:00,494 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:38:00,500 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:38:00,504 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:38:00,508 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:38:00,509 WARNING Task queue depth is 1
+2024-12-18 03:38:00,513 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:38:00,517 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:38:00,523 WARNING Task queue depth is 1
+2024-12-18 03:38:00,526 WARNING Task queue depth is 2
+2024-12-18 03:38:00,522 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:38:00,526 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:38:00,527 WARNING Task queue depth is 2
+2024-12-18 03:38:00,531 WARNING Not Found: /static/it/js/slide_palace_treasury.js
+2024-12-18 03:38:00,535 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:38:00,542 WARNING Task queue depth is 1
+2024-12-18 03:38:00,546 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:38:00,549 WARNING Not Found: /static/it/js/special_transverse.js
+2024-12-18 03:38:00,553 WARNING Not Found: /static/it/images/fire.svg
+2024-12-18 03:38:00,647 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:38:00,652 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:38:00,656 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:38:00,659 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:38:00,665 WARNING Not Found: /static/it/js/jquery.flexslider-min.js
+2024-12-18 03:38:00,669 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:38:00,673 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:38:00,677 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:38:00,682 WARNING Not Found: /static/it/js/basic.js
+2024-12-18 03:38:00,685 WARNING Not Found: /static/it/js/submit_suggest.js
+2024-12-18 03:38:00,689 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:38:00,694 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:38:00,698 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:38:00,702 WARNING Not Found: /static/it/js/proposal-Submit.js
+2024-12-18 03:38:00,704 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:38:00,712 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:38:00,716 WARNING Not Found: /static/it/js/jquery.common.js
+2024-12-18 03:38:00,722 WARNING Not Found: /static/it/plugins/jquery/jquery-1.12.4.js
+2024-12-18 03:38:00,728 WARNING Not Found: /static/it/assets/script.js
+2024-12-18 03:38:00,737 WARNING Task queue depth is 1
+2024-12-18 03:38:00,737 WARNING Task queue depth is 2
+2024-12-18 03:38:00,733 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.js
+2024-12-18 03:38:00,736 WARNING Not Found: /static/it/plugins/match-height/jquery.matchHeight-min.js
+2024-12-18 03:38:00,745 WARNING Task queue depth is 2
+2024-12-18 03:38:00,740 WARNING Not Found: /static/it/img/report_01.jpg
+2024-12-18 03:38:00,744 WARNING Not Found: /static/img_add/default.png
+2024-12-18 03:38:00,746 WARNING Task queue depth is 1
+2024-12-18 03:38:00,750 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:38:00,753 WARNING Not Found: /static/it/img/tip_03.jpg
+2024-12-18 03:38:00,757 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:05,353 WARNING Not Found: /static/admin/css/base.css
+2024-12-18 03:40:05,356 WARNING Task queue depth is 1
+2024-12-18 03:40:05,359 WARNING Not Found: /static/admin/css/dark_mode.css
+2024-12-18 03:40:05,363 WARNING Task queue depth is 2
+2024-12-18 03:40:05,362 WARNING Not Found: /static/admin/css/dashboard.css
+2024-12-18 03:40:05,367 WARNING Not Found: /static/admin/js/theme.js
+2024-12-18 03:40:05,370 WARNING Not Found: /static/admin/css/responsive.css
+2024-12-18 03:40:05,375 WARNING Not Found: /static/admin/css/nav_sidebar.css
+2024-12-18 03:40:05,378 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:40:05,478 WARNING Not Found: /static/admin/css/responsive.css
+2024-12-18 03:40:05,481 WARNING Not Found: /static/admin/js/nav_sidebar.js
+2024-12-18 03:40:05,483 WARNING Not Found: /static/admin/css/dashboard.css
+2024-12-18 03:40:05,486 WARNING Not Found: /static/admin/css/nav_sidebar.css
+2024-12-18 03:40:13,374 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:40:13,380 WARNING Task queue depth is 1
+2024-12-18 03:40:13,379 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:40:13,386 WARNING Task queue depth is 2
+2024-12-18 03:40:13,385 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:13,390 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:13,394 WARNING Task queue depth is 2
+2024-12-18 03:40:13,393 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:13,397 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:13,399 WARNING Task queue depth is 1
+2024-12-18 03:40:13,402 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:13,405 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:13,410 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:13,410 WARNING Task queue depth is 1
+2024-12-18 03:40:13,415 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:13,418 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:13,419 WARNING Task queue depth is 1
+2024-12-18 03:40:13,422 WARNING Not Found: /static/it/js/slide_palace_treasury.js
+2024-12-18 03:40:13,427 WARNING Not Found: /static/it/js/special_transverse.js
+2024-12-18 03:40:13,431 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:13,435 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:13,437 WARNING Task queue depth is 1
+2024-12-18 03:40:13,437 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:13,440 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:13,444 WARNING Not Found: /static/it/images/fire.svg
+2024-12-18 03:40:13,452 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:13,455 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:13,459 WARNING Not Found: /static/it/js/jquery.flexslider-min.js
+2024-12-18 03:40:13,462 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:13,469 WARNING Task queue depth is 1
+2024-12-18 03:40:13,469 WARNING Not Found: /static/it/js/submit_suggest.js
+2024-12-18 03:40:13,473 WARNING Task queue depth is 2
+2024-12-18 03:40:13,473 WARNING Not Found: /static/it/js/basic.js
+2024-12-18 03:40:13,477 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:13,480 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:13,483 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:13,489 WARNING Not Found: /static/it/js/proposal-Submit.js
+2024-12-18 03:40:13,493 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:40:13,503 WARNING Not Found: /static/it/js/jquery.common.js
+2024-12-18 03:40:13,503 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:40:13,505 WARNING Task queue depth is 1
+2024-12-18 03:40:13,508 WARNING Not Found: /static/it/plugins/jquery/jquery-1.12.4.js
+2024-12-18 03:40:13,513 WARNING Task queue depth is 1
+2024-12-18 03:40:13,511 WARNING Not Found: /static/it/assets/script.js
+2024-12-18 03:40:13,516 WARNING Not Found: /static/it/plugins/match-height/jquery.matchHeight-min.js
+2024-12-18 03:40:13,521 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.js
+2024-12-18 03:40:13,524 WARNING Not Found: /static/it/img/report_01.jpg
+2024-12-18 03:40:13,529 WARNING Not Found: /static/img_add/default.png
+2024-12-18 03:40:13,532 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:40:13,535 WARNING Not Found: /static/it/img/tip_03.jpg
+2024-12-18 03:40:13,538 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:15,369 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:40:15,376 WARNING Task queue depth is 1
+2024-12-18 03:40:15,376 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:15,381 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:15,383 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:15,387 WARNING Task queue depth is 1
+2024-12-18 03:40:15,386 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:15,391 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:40:15,395 WARNING Task queue depth is 1
+2024-12-18 03:40:15,395 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:15,400 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:15,403 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:15,403 WARNING Task queue depth is 1
+2024-12-18 03:40:15,407 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:15,408 WARNING Task queue depth is 1
+2024-12-18 03:40:15,411 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:15,418 WARNING Task queue depth is 1
+2024-12-18 03:40:15,414 WARNING Not Found: /static/plugin/sweetalert2.min.css
+2024-12-18 03:40:15,418 WARNING Not Found: /static/it/js/slide_palace_treasury.js
+2024-12-18 03:40:15,419 WARNING Task queue depth is 2
+2024-12-18 03:40:15,429 WARNING Task queue depth is 1
+2024-12-18 03:40:15,422 WARNING Not Found: /static/it/js/special_transverse.js
+2024-12-18 03:40:15,426 WARNING Not Found: /static/img_add/icon1.png
+2024-12-18 03:40:15,433 WARNING Task queue depth is 2
+2024-12-18 03:40:15,429 WARNING Not Found: /static/plugin/sweetalert2.min.js
+2024-12-18 03:40:15,432 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:15,434 WARNING Task queue depth is 1
+2024-12-18 03:40:15,437 WARNING Not Found: /static/it/images/fire.svg
+2024-12-18 03:40:15,441 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:15,442 WARNING Task queue depth is 1
+2024-12-18 03:40:15,444 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:15,450 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:15,454 WARNING Task queue depth is 1
+2024-12-18 03:40:15,457 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:15,470 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:15,473 WARNING Not Found: /static/it/js/basic.js
+2024-12-18 03:40:15,476 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:15,479 WARNING Not Found: /static/it/js/jquery.flexslider-min.js
+2024-12-18 03:40:15,487 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:15,491 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:15,494 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:15,499 WARNING Not Found: /static/plugin/sweetalert2.min.css
+2024-12-18 03:40:15,502 WARNING Not Found: /static/it/js/proposal-Submit.js
+2024-12-18 03:40:15,506 WARNING Not Found: /static/it/js/submit_suggest.js
+2024-12-18 03:40:15,511 WARNING Task queue depth is 1
+2024-12-18 03:40:15,511 WARNING Task queue depth is 2
+2024-12-18 03:40:15,515 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:40:15,518 WARNING Not Found: /static/it/plugins/jquery/jquery-1.12.4.js
+2024-12-18 03:40:15,521 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:40:15,525 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.js
+2024-12-18 03:40:15,526 WARNING Task queue depth is 2
+2024-12-18 03:40:15,529 WARNING Not Found: /static/it/js/jquery.common.js
+2024-12-18 03:40:15,531 WARNING Task queue depth is 1
+2024-12-18 03:40:15,535 WARNING Task queue depth is 2
+2024-12-18 03:40:15,534 WARNING Not Found: /static/it/plugins/match-height/jquery.matchHeight-min.js
+2024-12-18 03:40:15,539 WARNING Task queue depth is 2
+2024-12-18 03:40:15,541 WARNING Task queue depth is 1
+2024-12-18 03:40:15,544 WARNING Not Found: /static/it/assets/script.js
+2024-12-18 03:40:15,545 WARNING Task queue depth is 1
+2024-12-18 03:40:15,555 WARNING Task queue depth is 1
+2024-12-18 03:40:15,558 WARNING Not Found: /static/it/img/tip_03.jpg
+2024-12-18 03:40:15,561 WARNING Not Found: /static/img_add/tick1.png
+2024-12-18 03:40:15,564 WARNING Not Found: /static/it/img/report_01.jpg
+2024-12-18 03:40:15,564 WARNING Task queue depth is 2
+2024-12-18 03:40:15,569 WARNING Not Found: /static/img_add/tick2.png
+2024-12-18 03:40:15,573 WARNING Not Found: /static/img_add/tick3.png
+2024-12-18 03:40:15,578 WARNING Task queue depth is 1
+2024-12-18 03:40:15,577 WARNING Not Found: /static/img_add/tick4.png
+2024-12-18 03:40:15,582 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:40:15,587 WARNING Not Found: /static/img_add/default.png
+2024-12-18 03:40:15,596 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:15,832 WARNING Not Found: /static/img_add/icon1.png
+2024-12-18 03:40:15,854 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:40:39,053 INFO Serving on http://127.0.0.1:8000
+2024-12-18 03:40:45,741 WARNING Not Found: /static/it/js/jquery-1.11.3.min.js
+2024-12-18 03:40:45,746 WARNING Not Found: /static/it/js/common.js
+2024-12-18 03:40:45,751 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:45,755 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:45,759 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:45,764 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:45,767 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:45,770 WARNING Task queue depth is 1
+2024-12-18 03:40:45,770 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:45,774 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:45,777 WARNING Task queue depth is 1
+2024-12-18 03:40:45,780 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:45,787 WARNING Task queue depth is 1
+2024-12-18 03:40:45,784 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:45,791 WARNING Task queue depth is 2
+2024-12-18 03:40:45,787 WARNING Not Found: /static/plugin/sweetalert2.min.css
+2024-12-18 03:40:45,791 WARNING Not Found: /static/it/js/slide_palace_treasury.js
+2024-12-18 03:40:45,796 WARNING Task queue depth is 1
+2024-12-18 03:40:45,800 WARNING Task queue depth is 1
+2024-12-18 03:40:45,796 WARNING Not Found: /static/it/js/special_transverse.js
+2024-12-18 03:40:45,799 WARNING Not Found: /static/plugin/sweetalert2.min.js
+2024-12-18 03:40:45,804 WARNING Not Found: /static/img_add/icon1.png
+2024-12-18 03:40:45,807 WARNING Not Found: /static/it/images/fire.svg
+2024-12-18 03:40:45,853 WARNING Task queue depth is 1
+2024-12-18 03:40:45,852 WARNING Not Found: /static/it/js/jquery.flexslider-min.js
+2024-12-18 03:40:45,856 WARNING Not Found: /static/it/img/arrow_right.jpg
+2024-12-18 03:40:45,857 WARNING Task queue depth is 2
+2024-12-18 03:40:45,860 WARNING Not Found: /static/it/css/main.css
+2024-12-18 03:40:45,864 WARNING Task queue depth is 1
+2024-12-18 03:40:45,863 WARNING Not Found: /static/it/css/basic.css
+2024-12-18 03:40:45,867 WARNING Not Found: /static/it/css/footer.css
+2024-12-18 03:40:45,870 WARNING Task queue depth is 1
+2024-12-18 03:40:45,870 WARNING Not Found: /static/it/css/flexslider.css
+2024-12-18 03:40:45,874 WARNING Not Found: /static/it/js/basic.js
+2024-12-18 03:40:45,880 WARNING Not Found: /static/it/js/submit_suggest.js
+2024-12-18 03:40:45,888 WARNING Not Found: /static/it/css/special_topic.css
+2024-12-18 03:40:45,892 WARNING Not Found: /static/it/js/baidusearch.js
+2024-12-18 03:40:45,895 WARNING Not Found: /static/it/css/special_transverse.css
+2024-12-18 03:40:45,898 WARNING Not Found: /static/it/js/proposal-Submit.js
+2024-12-18 03:40:45,903 WARNING Task queue depth is 1
+2024-12-18 03:40:45,909 WARNING Task queue depth is 2
+2024-12-18 03:40:45,906 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.css
+2024-12-18 03:40:45,909 WARNING Not Found: /static/it/plugins/themify-icons/themify-icons.css
+2024-12-18 03:40:45,912 WARNING Not Found: /static/it/js/askciTongJi.js
+2024-12-18 03:40:45,915 WARNING Not Found: /static/it/assets/style.css
+2024-12-18 03:40:45,919 WARNING Task queue depth is 1
+2024-12-18 03:40:45,928 WARNING Not Found: /static/plugin/sweetalert2.min.css
+2024-12-18 03:40:45,931 WARNING Not Found: /static/it/plugins/jquery/jquery-1.12.4.js
+2024-12-18 03:40:45,934 WARNING Not Found: /static/it/js/jquery.common.js
+2024-12-18 03:40:45,942 WARNING Not Found: /static/it/plugins/bootstrap/bootstrap.min.js
+2024-12-18 03:40:45,949 WARNING Not Found: /static/it/plugins/match-height/jquery.matchHeight-min.js
+2024-12-18 03:40:45,953 WARNING Not Found: /static/it/assets/script.js
+2024-12-18 03:40:45,954 WARNING Task queue depth is 1
+2024-12-18 03:40:45,957 WARNING Not Found: /static/it/img/tip_03.jpg
+2024-12-18 03:40:45,961 WARNING Not Found: /static/it/img/report_01.jpg
+2024-12-18 03:40:45,965 WARNING Task queue depth is 1
+2024-12-18 03:40:45,965 WARNING Not Found: /static/img_add/tick1.png
+2024-12-18 03:40:45,970 WARNING Task queue depth is 1
+2024-12-18 03:40:45,969 WARNING Not Found: /static/img_add/tick3.png
+2024-12-18 03:40:45,974 WARNING Task queue depth is 2
+2024-12-18 03:40:45,974 WARNING Not Found: /static/img_add/tick2.png
+2024-12-18 03:40:45,979 WARNING Not Found: /static/img_add/default.png
+2024-12-18 03:40:45,982 WARNING Not Found: /static/img_add/tick4.png
+2024-12-18 03:40:45,987 WARNING Not Found: /static/it/img/gree.ico
+2024-12-18 03:40:45,991 WARNING Not Found: /static/it/img/arrow_right.jpg

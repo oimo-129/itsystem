@@ -30,7 +30,7 @@ import json
 from itproject.settings import MEDIA_ROOT, MEDIA_URL
 from django.conf import settings
 
-#首页的资源载入
+#首页的资源载入，选择文件类
 from info.models import *
 
 #分页功能
@@ -42,6 +42,7 @@ from django.contrib import messages
 
 #登录验证
 class CustomBackend(ModelBackend):
+
 
     def authenticate(self, username=None, password=None, **kwargs):
         try:
@@ -68,6 +69,8 @@ class IndexView(View):
         news_items = News.objects.all().order_by('-pub_date')
         #左侧文件资源
         all_file1s = File1Model.objects.all().order_by('-add_time')
+        #近期文档文件
+        all_files = FileModel.objects.all().order_by('-add_time')
         
         file1_names = [os.path.splitext(os.path.basename(file.file1.name))[0] for file in all_file1s]
         #分页器，显示5个
@@ -93,6 +96,8 @@ class IndexView(View):
             'current_page':current_page,
             'total_pages':paginator.num_pages,
             'news_items':news_items,
+            #最近的报告文件
+            'all_files':all_files,
         }
 
         return render(request, "index.html", context)
@@ -136,7 +141,12 @@ class RegisterView(View):
 
     def get(self, request):
         register_form = ResignForm()
-        return render(request, "resign.html", {'register_form': register_form})
+        desp_back = Department.objects.all()
+        context = {
+            'register_form': register_form,
+            'desp_back': desp_back,
+        }
+        return render(request, "resign.html", context)
 
     def post(self, request):
         register_form = ResignForm(request.POST)
@@ -146,15 +156,17 @@ class RegisterView(View):
             if UserProfile.objects.filter(email=email_num).exists():
                 return render(request, "resign.html", {'register_form': register_form, 'msg': "邮箱号已被使用"})
          
-                
+            user_name = request.POST.get("username", "")
+            desp_id = request.POST.get("department", "")
+            desp_name = Department.objects.get(id=desp_id)
             pass_word = request.POST.get("password", "")
             #创建用户
             user_profile = UserProfile(
                 email= email_num,
-                username= email_num,
-               
+                username= user_name,  
+                desp_name= desp_name,
             )
-            #密码，应该是这里要修改
+            #密码，这里还是用密文比较好
             user_profile.password = make_password(pass_word)
             user_profile.save()
             return render(request, "resign.html", {'register_form': register_form, 'msg': "用户注册成功!!!"})
