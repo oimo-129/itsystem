@@ -1,8 +1,6 @@
-body{margin: 0;padding: 0;font-family:  "Microsoft YaHei",Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", sans-serif;}
-/*header-top start*/
-/*.header-top { width:100%; height:32px; background:url(//image1.askci.com/s_dataimages/images/data-icon-2017-11-09000000015.png); margin:0 auto;}*/
-.header1{width: 100%;height: 32px;background-color:hsl(221, 89%,41%); margin:0 auto;}
-.header-top {  height:32px; margin:0 auto;}
+
+
+
 .header-top-left { height:32px;}
 .header-top-left a { float:left; font-size:15px; width:90px; line-height:32px; color:#eee; display:block;margin-right: 10px;}
 .header-top-left a img { width:30px; height:30px; padding:6px 0 0 8px; display:block;}
@@ -16,11 +14,13 @@ body{margin: 0;padding: 0;font-family:  "Microsoft YaHei",Arial, "PingFang SC", 
 /*.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 20px;}*/
 /*.header-top-right a:hover { color:#ede5e5;}*/
 .header-top-right  { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center;padding:0px 10px;padding-right:30px;}
-
+.header-top-right a:hover {background:#d85500;}
 .header-top-right a span { color: #FFFFFF;float: right;}
 .header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 10px;}
-.header-top-right img:hover { color: #c43e3e;}
-.header-top-right dropdown:hover { color: #d85500;;}
+.header-top-right .dropdown:hover {
+             color: #d85500;
+             background: #ef00cf;
+            }
 
 .code_box{position: absolute;top: 28px;left: -14px;width: 100px;height: 100px;z-index: 99999999;}
 .header-top-left .code_box img{width: 100%;height: 100%;}
@@ -28,7 +28,7 @@ body{margin: 0;padding: 0;font-family:  "Microsoft YaHei",Arial, "PingFang SC", 
 
 
 
-/* ���bootstrap4�ĵ�������ʽ */
+/* 锟斤拷锟絙ootstrap4锟侥碉拷锟斤拷锟斤拷锟斤拷式 */
 /* .nav{height:80px;width: 100%;border-bottom: 1px solid #eee;text-align: center;overflow: hidden; background-color: #efefef;} */
 
 /* :root {

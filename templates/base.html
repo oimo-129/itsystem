@@ -37,134 +37,12 @@
     <link rel="stylesheet" href="{% static 'plugin/sweetalert2.min.css' %}">
     <script src="{% static 'plugin/sweetalert2.min.js' %}"></script>
 
+    <!--将自定义样式放进base.css-->
+    <link rel="stylesheet" href="{% static 'gree/base.css' %}">
+
 <!--添加自定义的样式-->
     {% block custom %}
     {% endblock %}
-
-
-
-
-    <style>
-        /* 改变导航栏布局位置 */
-        
-    #search_div {
-        margin-top: 15px;
-        margin-left: 100px;
-    }
-    
-    #fire_img {
-        width: 15%;
-    }
-    /* 改变热门质量报告位置 */
-
-
-
-    
-        .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #0d09eb;
-        min-width: 80px;
-        {#min-width: 160px;#}
-        box-shadow: 0px 8px 16px 0px rgba(220, 25, 25, 0.2);
-        z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-        display: block;
-        background-color: #1d3dbb;
-    }
-
-
-
-    .dropdown-content a {
-        color: #ffffff;
-        padding: 12px 10px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #5395ec;
-        /* 悬停时更改链接背景色 */
-    }
-
-    .dropdown  {
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-
-
-
-    .user-info 
-    {
-            display: flex;
-            align-items: center;
-            gap: 8px; /* 设置图片和文字之间的间距 */
-    }
-
-    .user-info img 
-    {
-        display: block; /* 消除图片底部可能的空隙 */
-    }
-
-    .user-info span 
-    {
-        color: white;
-    }
-
-
-    #contact:hover
-    {
-        color:blue;
-    }
-
-
-
-
-    .my-swal {  
-        font-family: 'Arial', sans-serif;  
-    }  
-    
-    .my-swal-popup {  
-        background-color: #f8f8f8;  
-        border-radius: 10px;  
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
-    }  
-    
-    .my-swal-header {  
-        background-color: #007bff;  
-        color: #fff;  
-        padding: 20px;  
-        border-top-left-radius: 10px;  
-        border-top-right-radius: 10px;  
-    }  
-    
-    .my-swal-title {  
-        font-size: 24px;  
-        font-weight: bold;  
-    }  
-    
-    .my-swal-content {  
-        padding: 20px;  
-        font-size: 16px;  
-    }  
-    
-    .my-swal-confirm-button {  
-        background-color: #007bff;  
-        color: #fff;  
-        border: none;  
-        padding: 10px 20px;  
-        border-radius: 5px;  
-        font-size: 16px;  
-        cursor: pointer;  
-    }
-    </style>
 
 </head>
 
@@ -174,70 +52,27 @@
 <body>
 
 
+    <div class="header1">
 
-
-
-    <!--header-top start-->
-<div class="header1" style="height:32px">
-    <div class="header-top">
-
-        <div class="header-top-left fl">
-                <a href="{% url 'home' %}" target="_blank">
-
-                    
-                    <img class="flb" src="{% static 'img_add/icon1.png' %}">
-                    <span>首页</span>
+        <div class="header-top">
+            <div class="header-top-left fl">
+                <a href="//www.chnci.com/" target="_blank">
+                    <img class="flb" src="//jscss.askci.com/askci1807/img/askci-header-02.png" alt="">
+                    <span>&nbsp首页</span>
                 </a>
+                
+             
 
+            </div>
+            <div class="header-top-right fr">
+                <a href="https://www.askci.com/special/carbon.shtml" target="_blank">情报需求</a>
+                <a href="https://www.askci.com/special/cyzsdt.shtml" target="_blank">个人中心</a>               
+                <a href="//www.askci.com/reports/about/contact.shtml" target="_blank">退出登录</a>
+            </div>
         </div>
 
         
-
-        <div class="header-top-right fr " style="min-width: 150px; max-height: 32px; margin-top:-5px">
-
-            <!--
-            <a href="{% url 'user:need' %}" target="_blank" >
-                <img src="{% static 'it/img/bookshelf.svg' %}" width="20" height="32"> 情报需求
-            </a>
-            -->
-
-            <div class="dropdown">
-
-                {% if request.user.is_authenticated %}
-                
-
-                    <div class="user-info">
-                        {% if request.user.avatar %}
-                        <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" style="margin-top: -10px">
-                        {% else %}
-                        <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" style="margin-top: -10px">
-                        {% endif %}
-
-                        <span style="color: white; ">{{ user.username }}</span>
-                    </div>
-
-                    <div class="dropdown-content">
-                                <a href="{% url 'user:userinfo' %}">个人中心</a>
-                                <a href="{% url 'logout' %}">退出登录</a>
-                    </div>
-                    
-                {% else   %}
-                
-                    <a href="{%  url 'login' %}" target="_blank" style=" margin-top:-5px " class="user-info">
-                        <img src="{% static 'it/img/person-fill-check.svg' %}" width="30" height="30" >
-                        <span style="color: white; ">登录/注册</span>
-                    </a>    
-
-                {% endif %}
-
-            </div>
-
- 
-              
-        </div>
-
     </div>
-</div>
 
 
 
