@@ -301,6 +301,10 @@ class UpdatePwdView(LoginRequiredMixin, View):
 
 '''
 class UserInfoNeed(LoginRequiredMixin, View):
+    
+    def handle_no_permission(self):
+        return render(self.request, 'no_permission.html')
+    
     def get(self, request):
 
         desp_back = Department.objects.values('name')

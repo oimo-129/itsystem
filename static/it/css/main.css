@@ -1,45 +1,12 @@
 
 
 
-.header-top-left { height:32px;}
-.header-top-left a { float:left; font-size:15px; width:90px; line-height:32px; color:#eee; display:block;margin-right: 10px;}
-.header-top-left a img { width:30px; height:30px; padding:6px 0 0 8px; display:block;}
-.header-top-left a span { float: left;padding-left:5px; padding-top: 2px; }
-.header-top-left a:hover {background:#d85500;}
-/* .header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center; background:url(https://image1.askci.com/s_dataimages/images/data-icon-2017-11-0900000008.png
-) no-repeat right; padding:0 8px;} */
-/*.header-top-right a { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center;padding:0px 10px;padding-right:30px;}*/
 
-/*.header-top-right a span { color: #FFFFFF;float: right;}*/
-/*.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 20px;}*/
-/*.header-top-right a:hover { color:#ede5e5;}*/
-.header-top-right  { font-size:15px;color: #fff; display:block; float:left; line-height:32px; text-align:center;padding:0px 10px;padding-right:30px;}
-.header-top-right a:hover {background:#d85500;}
-.header-top-right a span { color: #FFFFFF;float: right;}
-.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 10px;}
-.header-top-right .dropdown:hover {
-             color: #d85500;
-             background: #ef00cf;
-            }
+
 
 .code_box{position: absolute;top: 28px;left: -14px;width: 100px;height: 100px;z-index: 99999999;}
 .header-top-left .code_box img{width: 100%;height: 100%;}
-/*header-top end*/
 
-
-
-/* 锟斤拷锟絙ootstrap4锟侥碉拷锟斤拷锟斤拷锟斤拷式 */
-/* .nav{height:80px;width: 100%;border-bottom: 1px solid #eee;text-align: center;overflow: hidden; background-color: #efefef;} */
-
-/* :root {
-  --primary-color: #3d47b5;
-  --body-color: #f9f9f9;
-  --text-color: #636363;
-  --text-color-dark: #242738;
-  --white-color: #ffffff;
-  --light-color: #f8f9fa;
-  --font-family: Lato;
-} */
 
 .nav{
     height:250px;

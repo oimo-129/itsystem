@@ -3,14 +3,146 @@ body{margin: 0;
     padding: 0;
     font-family:  "Microsoft YaHei",Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", sans-serif;
     }
+
 .header1{
     width: 100%;
-    height: 32px;
+    height: 40px;
     background-color:hsl(221, 89%,41%); margin:0 auto;
+    position: relative;
 }
-.header-top {  height:32px; margin:0 auto;}
+.header-top {  position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;}
+.header-top-left { height:40px;}
+.header-top-left a { float:left; 
+                    font-size:18px; 
+                    width:90px;
+                    height: 40px;
+                    line-height:px; 
+                    color:#eee; 
+                    display:block;
+                    margin-right: 10px;}
+
+.header-top-left a img { width:30px; height:30px; padding:6px 0 0 8px; display:block;}
+.header-top-left a span { float: left;padding-left:5px; padding-top: 4px; }
+.header-top-left a:hover {background:#d85500;}
+
+.header-top-right { height:40px;
+            display: flex;  /* 改用 flex 布局 */
+            align-items: center;  /* 垂直居中 */
+        }
+.header-top-right a { font-size:16px;
+                color: #fff;
+                display:block; 
+                float:left; 
+                height:40px;
+                line-height:32px; 
+                text-align:center;
+                padding:0px 10px;
+                padding-right:30px;}
+
+.header-top-right a:hover {background:#d85500;}
+.header-top-right span_uname {
+                font-size:16px;
+                color: #fff;
+                display:block; 
+                float:right; 
+                height:40px;
+                line-height:32px; 
+                text-align:center;
+                padding:0px 10px;
+                padding-right:30px;
+                }
+.vertical-line {    display: inline-block;
+                    width: 1px;
+                    height: 35px;
+                    background-color: rgb(225, 226, 235);
+                    margin: 0 5px;
+                    vertical-align: middle;
+                }
+.header-top-right a img { width:25px; height:25px; padding:6px 0 0 4px; display:block;}
+.header-top-right a img { float:left; margin:2px 0 0 0;margin-right: 5px;}
+.header-top-right  img { width:25px; height:25px; padding:6px 0 0 4px; display:block;}
+.header-top-right div {
+          /* 使用flex布局 */
+    align-items: center;    /* 垂直居中对齐 */
+    height: 40px;
+    padding: 0 10px;
+    margin-right: 20px;
+   margin-top: -5px;
+}
+.header-top-right div:hover {
+    background-color: #d85500;
+}
+
+.header-top-right div img {
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;     /* 图片和文字之间的间距 */
+    padding: 0;            /* 移除原有的padding */
+}
 
 
+.fl {float:left; margin-top: 5px;}
+.fr {float:right; margin-top: 5px; }
+
+
+.span_uname {
+    color: #fff;
+    font-size: 16px;
+    line-height: 40px;     /* 与父元素高度一致 */
+    margin: 0;             /* 移除可能的外边距 */
+    padding: 0;            /* 移除可能的内边距 */
+}
+
+
+
+
+/* 下拉菜单 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none; /* 默认隐藏 */
+    position: absolute;
+    height: 100px;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    border-radius: 4px;
+    padding: 20px 0; /* 增加上下内边距 */
+}
+
+ /* 修改这里：只在悬浮时显示 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: #333 !important;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f5f5f5;
+    color: #d85500 !important;
+}
 
 #search_div {
     margin-top: 15px;
@@ -19,23 +151,6 @@ body{margin: 0;
 
 #fire_img {
     width: 15%;
-}
-
-.user-info 
-{
-        display: flex;
-        align-items: center;
-        gap: 8px; /* 设置图片和文字之间的间距 */
-}
-
-.user-info img 
-{
-    display: block; /* 消除图片底部可能的空隙 */
-}
-
-.user-info span 
-{
-    color: white;
 }
 
 

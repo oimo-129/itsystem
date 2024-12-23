@@ -55,31 +55,78 @@
     <div class="header1">
 
         <div class="header-top">
-            <div class="header-top-left fl">
-                <a href="//www.chnci.com/" target="_blank">
-                    <img class="flb" src="//jscss.askci.com/askci1807/img/askci-header-02.png" alt="">
-                    <span>&nbsp首页</span>
-                </a>
-                
-             
 
+            <div class="header-top-left fl">
+                <a href="{% url 'home' %}" target="_blank">
+                    <img class="flb" src="{% static 'img_add/house.svg' %}" alt="主页" style="filter: brightness(0) invert(1);">
+                    <span>&nbsp首页</span>
+                </a>          
             </div>
+    {% if request.user.is_authenticated %}
             <div class="header-top-right fr">
-                <a href="https://www.askci.com/special/carbon.shtml" target="_blank">情报需求</a>
-                <a href="https://www.askci.com/special/cyzsdt.shtml" target="_blank">个人中心</a>               
-                <a href="//www.askci.com/reports/about/contact.shtml" target="_blank">退出登录</a>
+                <a href="{% url 'user:need' %}" target="_blank">
+                    <img class="flb" src="{% static 'img_add/journal-arrow-up.svg' %}" alt="情报需求" style="filter: brightness(0) invert(1);">
+                    情报需求
+                </a>
+
+               
+                <span class="vertical-line"></span>
+
+            <div class="dropdown">    
+                <div class="user-info">
+                    {% if request.user.avatar %}               
+                    <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" >
+                    <span class="span_uname">{{ request.user.username }}</span>
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}avatars/default/default.png"  >
+                    <span class="span_uname">{{ request.user.username }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="dropdown-content">
+                    <a href="{% url 'user:userinfo' %}">个人中心</a>
+                    <a href="{% url 'logout' %}">退出登录</a>
+                </div>  
+
+                {% comment %} <div class="dropdown-content">
+                    <a href="{% url 'user:userinfo' %}">个人中心</a>
+                    <a href="{% url 'logout' %}">退出登录</a>
+                </div> {% endcomment %}
             </div>
+                {% comment %} <div class="dropdown">
+                        <div class="user-info">
+                    {% if request.user.avatar %}
+                            <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" >
+                    {% else %}
+                            <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" >
+                    {% endif %}
+                            <span style="color: white; ">{{ user.username }}</span>
+                </div> {% endcomment %}
+                {% comment %} <div class="dropdown-content">
+                            <a href="{% url 'user:userinfo' %}">个人中心</a>
+                            <a href="{% url 'logout' %}">退出登录</a>
+                </div>                 {% endcomment %}
+            </div>
+    {% else %}
+            <div class="header-top-right fr">
+                <a href="{% url 'user:need' %}" target="_blank">
+                    <img class="flb" src="{% static 'img_add/journal-arrow-up.svg' %}" alt="情报需求" >
+                    情报需求
+                </a>
+                <span></span>
+                <a href="{% url 'login' %}" target="_blank">
+                    <img class="flb" src="{% static 'img_add/door-open.svg' %}" alt="登录注册" >
+                    注册登录
+                </a>
+            </div>
+    {% endif %}
         </div>
 
         
     </div>
 
 
-
-
-{#添加个性化内容#}
-
-    {% block content %}
+{% block content %}
     
 {%  endblock %}
 
