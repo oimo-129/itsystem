@@ -276,41 +276,19 @@ a:hover{
     line-height:normal\9;
     padding:12px 10px 9px\9;
 }
-.captcha1 > input{
-     width:80px;
-}
-.captcha1 > img{
-    float:right;
-    margin-top:5px;
-}
-.verify-code{
+
+.form-group > select{
     float:left;
-    width:180px;
+    width:195px;
+    line-height:24px;
+    padding:7px 10px;
+    border:0;
+    line-height:normal\9;
+    padding:12px 10px 9px\9;
+    background:#fff;
 }
-.verify-code > input{
-    width:87px;
-}
-.verify-code-btn{
-    float:left;
-    width:103px;
-    margin-left:3px;
-    height:38px;
-    line-height:38px;
-    border:1px solid #dedede;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    background:#f5f5f5;
-    color:#666;
-    text-align: center;
-    cursor: pointer;
-}
-.form-group .mobile-register-captcha{
-    width:85px;
-}
-.form-group .captcha{
-    cursor: pointer;
-}
+
+
 .auto-box{
     height:18px;
     line-height:18px;
@@ -455,3 +433,29 @@ a:hover{
 .dialogbox .button{width:100%;height:45px;line-height:45px;background:#5dbf45;color:#fff;margin:0;border:none; cursor: pointer;position: relative;}
 .dialogbox .button input{background: none;border:none;width:100%;color:#fff;cursor: pointer;line-height: 45px;}
 .dialogbox .button:hover{background:#4FB137;}
+
+/* 下拉框的样式  */
+/* 默认选项（未选择时）的样式 */
+.form-group select option[value=""][disabled] {
+    color: #999;
+}
+
+/* 下拉框默认状态（未选择时）的颜色 */
+.form-group select {
+    color: #999;
+}
+
+/* 下拉框选中后的颜色 */
+.form-group select:valid {
+    color: #333;  /* 选中后变为黑色 */
+}
+
+/* 下拉选项的颜色 */
+.form-group select option:not([value=""][disabled]) {
+    color: #333;
+}
+
+/* input placeholder的样式 */
+.form-group input::placeholder {
+    color: #999;
+}

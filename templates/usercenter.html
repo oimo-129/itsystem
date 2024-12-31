@@ -3,20 +3,16 @@
 {% load static %}
 <head>
 	<meta charset="UTF-8">
-    <meta name="renderer" content="webkit">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" >
-	<title>{% block title %}个人中心模块{% endblock %}</title>
+    
+	<title>{% block title %}个人中心{% endblock %}</title>
 	<link rel="stylesheet" type="text/css" href="{% static 'css/reset.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/animate.css' %}">
 	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'js/plugins/queryCity/css/cityLayout.css' %}">
-
-    <link rel="stylesheet" type="text/css" href="{% static 'css/lq.datetimepick.css' %}"/>
 
     {% block custom_css %}
     {% endblock %}
 
-    <script src="{% static 'js/jquery.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'gree/jquery-1.11.3.min.js' %}"></script>
     <script src="{% static 'js/jquery-migrate-1.2.1.min.js' %}" type="text/javascript"></script>
 
 
@@ -26,7 +22,8 @@
     <link rel="stylesheet" href="{% static 'it/css/flexslider.css'%}">
     <link rel="stylesheet" href="{% static 'it/css/footer.css' %}">
 
-
+    <link rel="icon" href="{% static 'img_add/favicon.ico' %}" type="image" />
+    
     <!-- toastr的配置目录引入 -->  
     <link rel="stylesheet" href="{% static 'plugin/toastr/toastr.min.css' %}">  
     <script src="{% static 'plugin/toastr/toastr.min.js' %}"></script>
@@ -37,190 +34,88 @@
     <link rel="stylesheet" href="{% static 'plugin/sweetalert2.min.css' %}">
     <script src="{% static 'plugin/sweetalert2.min.js' %}"></script>
 
-
-    <!--增加按钮样式-->
-<style>
-    .toast-warning{
-        background-color: #105CB3 !important; 
-    }
-    
-
-    .toast-buttons {  
-        margin-top: 20px;  
-        text-align: center;  
-    }  
-    
-    .toast-buttons button {  
-        margin: 0 5px;  
-        padding: 5px 15px;  
-        border: none;  
-        border-radius: 3px;  
-        cursor: pointer;  
-    }  
-    
-    .confirm-btn {  
-        background-color: #3498db;  
-        color: white;  
-    }  
-    
-    .cancel-btn {  
-        background-color: #95a5a6;  
-        color: white;  
-    }  
-    
-    .toast-buttons button:hover {  
-        opacity: 0.8;  
-    }  
-
-
-    .alert {  
-        padding: 15px;  
-        margin-bottom: 20px;  
-        border: 1px solid transparent;  
-        border-radius: 4px;  
-    }  
-    .alert-success {  
-        color: #3c763d;  
-        background-color: #dff0d8;  
-        border-color: #d6e9c6;  
-    }  
-    .alert-danger {  
-        color: #a94442;  
-        background-color: #f2dede;  
-        border-color: #ebccd1;  
-    }  
-    .alert-info {  
-        color: #31708f;  
-        background-color: #d9edf7;  
-        border-color: #bce8f1;  
-    }  
-    .mybutton:hover{
-
-        background: #2970b9;
-    }
+        <!--将自定义样式放进base.css-->
+    <link rel="stylesheet" href="{% static 'gree/base.css' %}">
 
 
 
-
-
-
-    .alert {  
-        padding: 15px;  
-        margin-bottom: 20px;  
-        border: 1px solid transparent;  
-        border-radius: 4px;  
-    }  
-    
-    .alert-success {  
-        color: #3c763d;  
-        background-color: #dff0d8;  
-        border-color: #d6e9c6;  
-    }  
-    
-    .alert-danger {  
-        color: #a94442;  
-        background-color: #f2dede;  
-        border-color: #ebccd1;  
-    }  
-    
-    .error-tips123 {  
-        color: #a94442;  
-        display: block;  
-        margin-top: 5px;  
-        font-size: 12px;  
-    }  
-
-
-    .error-tips123 {  
-        margin-left: 10px;  
-        font-size: 14px;  
-        transition: all 0.3s ease;  
-    }  
-    
-    .error-tips123.success {  
-        color: green;  
-    }  
-    
-    .error-tips123.error {  
-        color: red;  
-    }  
-
-
-
-
-    #contact:hover
-    {
-        color:blue;
-    }
-
-
-
-
-    .my-swal {  
-        font-family: 'Arial', sans-serif;  
-    }  
-    
-    .my-swal-popup {  
-        background-color: #f8f8f8;  
-        border-radius: 10px;  
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
-    }  
-    
-    .my-swal-header {  
-        background-color: #007bff;  
-        color: #fff;  
-        padding: 20px;  
-        border-top-left-radius: 10px;  
-        border-top-right-radius: 10px;  
-    }  
-    
-    .my-swal-title {  
-        font-size: 24px;  
-        font-weight: bold;  
-    }  
-    
-    .my-swal-content {  
-        padding: 20px;  
-        font-size: 16px;  
-    }  
-    
-    .my-swal-confirm-button {  
-        background-color: #007bff;  
-        color: #fff;  
-        border: none;  
-        padding: 10px 20px;  
-        border-radius: 5px;  
-        font-size: 16px;  
-        cursor: pointer;  
-    }
-</style>
-
+    <!--打个补丁-->
+    <style>
+       
+    </style>
 </head>
+
+
 
 
 <body>
 
 
-    <!--个人中心最上方导航栏-->
-    <div class="header1" style="height: 32px">
+    <div class="header1">
         <div class="header-top">
             <div class="header-top-left fl">
                 <a href="{% url 'home' %}" target="_blank">
-                    <img class="flb" src="{% static 'it/img/gree.ico' %}" style="margin-top: -5px">
-                    <span style="margin-top: -3px">首页</span>
+                    <img class="flb " src="{% static 'img_add/favicon.ico' %}" alt="主页" style="filter: brightness(0) invert(1); ">
+                    <span>&nbsp首页</span>
+                </a> 
+                <style>
+                    .header-top-left a img{
+                        width:25px; height:25px; padding:6px 0 0 5px; display:block;
+                       
+                    }
+               
+                </style>         
+            </div>
+    {% if request.user.is_authenticated %}
+            <div class="header-top-right fr">
+                <span class="vertical-line"></span>
+                <a  class="new-pattern" href="{% url 'user:need' %}" target="_blank">
+                    <img class="flb " src="{% static 'img_add/journal-arrow-up.svg' %}" alt="情报需求" style="filter: brightness(0) invert(1);">
+                    情报需求
+                </a>             
+                <span class="vertical-line"></span>
+     
+                <div class="user-info new-pattern">
+                    {% if request.user.avatar %}               
+                    <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" >                       
+                    {% else %}
+                    <img src="{{ MEDIA_URL }}avatars/default/default.png"  >
+                    {% endif %}
+                    <a href="{% url 'user:userinfo' %}" class="span_uname ">{{ request.user.username }}</a>
+                </div>
+               
+                <span class="vertical-line"></span>
+
+                <a href="{% url 'logout' %}" class="logout-btn new-pattern" target="_blank">
+                    <img class="flb new-pattern" src="{% static 'img_add/box-arrow-right.svg' %}" alt="退出登录" style="filter: brightness(0) invert(1);">
+                    退出登录
+                </a>    
+            </div> 
+        </div>
+
+            
+    {% else %}
+            <div class="header-top-right fr">
+                <a href="{% url 'user:need' %}"  class="new-pattern"  target="_blank">
+                    <img class="flb" src="{% static 'img_add/journal-arrow-up.svg' %}" style="filter: brightness(0) invert(1);" alt="情报需求" >
+                    情报需求
+                </a>
+                <style>
+                    .header-top-right a img{
+                        width:25px !important; height:25px !important; 
+                        padding:6px 0 0 4px !important; display:block !important;
+                       
+                    }
+                </style>         
+                <span></span>
+                <a href="{% url 'login' %}"  class="new-pattern target="_blank">
+                    <img class="flb" src="{% static 'img_add/door-open.svg' %}" style="filter: brightness(0) invert(1);" alt="登录注册" >
+                    注册登录
                 </a>
             </div>
-
-            <div class="header-top-right fr " style="min-width: 100px; max-height: 32px ;color: white; margin-top: 2px">
-                {% if request.user.avatar %}
-                <img src="{{ MEDIA_URL }}{{ request.user.avatar }}" width="30" height="30" style="margin-top: -5px">
-               {% else %}
-               <img src="{{ MEDIA_URL }}avatars/default/default.png" width="30" height="30" >
-               {% endif %}
-            </div>
-        </div>
+    {% endif %}
+         </div>
     </div>
-
 
 
 
@@ -397,10 +292,7 @@
                   </p>
                 
               </div>
-              <div class="footer_end_box_right">
-                  <img src="{% static 'it/img/gree.ico' %}" alt="" class="code2">
-                  <div>家电一院情报系统</div>
-              </div>
+              
           </div>
       </div>
     </div>
@@ -747,6 +639,22 @@ $(document).ready(function() {
     </script>
 
 
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const userInfo = document.querySelector('.user-info');
+            const userNameSpan = document.querySelector('.span_uname');
+            const originalText = userNameSpan.textContent;
+
+            userInfo.addEventListener('mouseenter', function() {
+                userNameSpan.textContent = '用户中心';
+            });
+
+            userInfo.addEventListener('mouseleave', function() {
+                userNameSpan.textContent = originalText;
+            });
+        });
+    </script>
 
 
 

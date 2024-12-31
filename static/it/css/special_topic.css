@@ -10,7 +10,7 @@ img{border:0 none;}
 .customer_evaluate_list_com { width:1200px; height: 142px; overflow: hidden;}
 .customer_evaluate_list_com li { width: 280px;height: 142px; margin-right:20px; float: left;}
 .customer_evaluate_list_com li:hover { box-shadow:4px 4px 12px #ddd, -4px 4px 12px #ddd;z-index: 10; transition: all 0.1s linear 0s;}
-.customer_evaluate_list_com li a {  vertical-align:middle; text-align:center; display:table-cell; display: block;}
+.customer_evaluate_list_com li a {vertical-align:middle; text-align:center; display:table-cell; display: block;}
 .box_content_img1 { width:260px; height: 122px; display: block; overflow: hidden; padding: 10px 10px;}
 .box_content_img1 img{width: 260px;height: 92px;transition: all 0.5s;border: 1px solid #e7e7e7;display: block;}
 .box_content_img1 img:hover{transition: all 0.5s; transform: scale(1.05);}

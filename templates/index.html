@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title  %} 情报系统首页 {% endblock %}
+{% block title  %} 首页 {% endblock %}
 {%  load static %}
 
 {% load custom_filters %}
@@ -13,16 +13,7 @@
 
     <!-- 学它的布局，将它的布局重新编排 -->
     <div class="nav bg-cover " id="nav1">
-
-
         <div class="nav_inbox">
-            <!--
-            <a href="{% url 'home' %}">
-                <img class="logo" src="{% static 'it/img/gree.ico' %}" alt="">
-            </a>
-            -->
-
-
             <div class="col-lg-8 text-center mx-auto">
                 <h2 style="margin-top: 20px; margin-left: 15px; color: white;">格力家电一院情报系统</h2>
 
@@ -101,11 +92,83 @@
         <ul>
             <li><a class="act2" href="{% url 'home' %}">首页</a></li>
 
-            <li><a href="{% url 'info:infolist' %}" target="_blank">市场报告</a></li>
-            <li><a href="{% url 'info:infolist' %}" target="_blank">新品月报</a></li>
-            <li><a href="{% url 'info:infolist' %}" target="_blank">情报研究</a></li>
-            <li><a href="{% url 'info:infolist' %}" target="_blank">产品线</a></li>
-            <li><a href="{% url 'info:infolist' %}" target="_blank">其他共享文件</a></li>
+            <li id="academy_box">
+                <a href="#" target="_blank" id="academy">
+                    <span style="margin-right: 15px;">市场报告</span>
+                    <div style="right: 15px;"></div>
+                </a>
+                <div class="nav2_list" id="service_list">
+                    <div><a href="#" target="_blank">全部资料</a></div>
+                    <div><a href="#" target="_blank">产品洞察</a></div>
+                    <div><a href="#" target="_blank">行业研究</a></div>
+                    <div><a href="#" target="_blank">用户调研</a></div>
+                </div>
+            </li>
+
+            
+            
+            <li id="service_box2">
+                <a href="#" target="_blank" id="academy">
+                    <span style="margin-right: 15px;">新品月报</span>
+                    <div style="right: 15px;"></div>
+                </a>
+                <div class="nav2_list123" id="monthly_list">
+                    <div><a href="#" target="_blank">全部资料</a></div>
+                    <div><a href="#" target="_blank">电风扇</a></div>
+                    <div><a href="#" target="_blank">电暖器</a></div>
+                    <div><a href="#" target="_blank">净水机</a></div>
+                    <div><a href="#" target="_blank">厨房小电</a></div>
+                    <div><a href="#" target="_blank">清洁电器</a></div>
+                    <div><a href="#" target="_blank">其他产品</a></div>
+                </div>
+            </li>
+
+            <li id="service_box1">
+                <a href="#" target="_blank" id="academy">
+                    <span style="margin-right: 15px;">用户体验</span>
+                    <div style="right: 15px;"></div>
+                </a>
+                <div class="nav2_list12" id="service_list">
+                    <div><a href="#" target="_blank">全部资料</a></div>
+                    <div><a href="#" target="_blank">电风扇</a></div>
+                    <div><a href="#" target="_blank">电暖器</a></div>
+                    <div><a href="#" target="_blank">净水机</a></div>
+                    <div><a href="#" target="_blank">厨房小电</a></div>
+                    <div><a href="#" target="_blank">清洁电器</a></div>
+                    <div><a href="#" target="_blank">其他产品</a></div>
+                </div>
+            </li>
+
+            <li id="nav_group">
+                <a href="#" target="_blank" id="academy">
+                    <span style="margin-right: 5px;">产品线</span>
+                    <div style="right: 10px;"></div>
+                </a>
+                <div class="nav2_list1" id="service_list">
+                    <div><a href="#" target="_blank">全部资料</a></div>
+                    <div><a href="#" target="_blank">电风扇</a></div>
+                    <div><a href="#" target="_blank">电暖器</a></div>
+                    <div><a href="#" target="_blank">净水机</a></div>
+                    <div><a href="#" target="_blank">厨房小电</a></div>
+                    <div><a href="#" target="_blank">清洁电器</a></div>
+                    <div><a href="#" target="_blank">其他产品</a></div>
+                </div>
+            </li>
+
+           
+            <li><a href="#">情报研究</a></li>
+            <li><a href="#">其他共享文件</a></li>
+          <!--  <li id="academy_box1" style="margin-left:10px;">
+                <a href="#" target="_blank" id="academy">
+                    <span style="margin-right: 15px;">其他共享文件</span>
+                    <div style="margin-left: 15px;"></div>
+                </a>
+                <div class="nav2_list4" id="service_list">
+                    <div><a href="#" target="_blank">全部资料</a></div>
+                    <div><a href="#" target="_blank">情报研究</a></div>
+                </div>
+            </li>
+          -->
      
         </ul>
     </div>
@@ -185,6 +248,7 @@
         color: #2970b9; /* 鼠标悬浮时字体变红 */  
         }  
 
+        
     </style>
 
 
@@ -336,54 +400,11 @@ startSlide();
 
 
 <div class="content3 margin_bottom0 content2023">
-    <div class="free_report free_report2023">
-        <div class="content_title">
-            <span>近期情报</span>
-            <div class="line1 width-bod96"></div>
-            <div class="more po_r4">
-                <a href="#" target="_blank">
-                    <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
-                </a>
-            </div>
-        </div>
-        <div class="free_report_content2">
-            <ul>
-                {% for file in all_files|slice:":8" %}
-                <li>
-                    <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.title }}">
-                        <div class="free_report_img2">
-                         
-                            <img src="{{ file.cover.url }}" alt="文件封面">
-                        </div>
-                    </a>
-                    <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.name }}">
-                        <div class="free_report_title2">{{ file.name }}</div>
-                    </a>
-                    <div class="hot_news_tips margin_top2">
-                        <img class="margin_left_8" src="/static/it/img/tip_03.jpg" alt="">
-                        <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.title }}">
-                            {{file.file_product}}
-                        </a>
-                    </div>
-                </li>
-                {% endfor %}
-               
-                           
-                           
-                            
-                            
-                            
-                           
-
-                <div class="clear_float"></div>
-            </ul>
-        </div>
-    </div>
-
-
+   
+   
     <div class="service service2023">
         <div class="content_title">
-            <span>文件排版1</span>
+            <span>院内新闻</span>
             <div class="line1 width-bod96"></div>
             <div class="more">
                 <!--添加分页功能-->
@@ -424,6 +445,59 @@ startSlide();
                 </div>
             </div>
     </div>
+   
+    <div class="free_report free_report2023">
+        <div class="content_title">
+            <span>最新报告</span>
+            <div class="line1 width-bod96"></div>
+            <div class="more po_r4">
+                <a href="#" target="_blank">
+                    <img src="{% static 'it/img/arrow_right.jpg'%}" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="free_report_content2">
+            <ul>
+                {% for file in all_files|slice:":8" %}
+                <li>
+                    <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.title }}">
+                        <div class="free_report_img2">
+                         
+                            <img src="{{ file.cover.url }}" alt="文件封面">
+                        </div>
+                    </a>
+                    <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.name }}">
+                        <div class="free_report_title2">{{ file.name }}</div>
+                    </a>
+                    <div class="hot_news_tips margin_top2">
+                        <img class="margin_left_8" src="/static/it/img/tip_03.jpg" alt="">
+                        <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.title }}">
+                            {{file.file_product}}
+                        </a>
+                    </div>
+                    <div class="hot_news_tips margin_top2">
+                        <img class="margin_left_8" src="/static/it/img/tip_07.jpg" alt="">
+
+                        <a href="{% url 'info:infolist'  %}?file_id={{ file.id }}" target="_blank" title="{{ file.title }}">
+                            {{file.file_dist}}
+                        </a>
+                    </div>
+                </li>
+                {% endfor %}
+               
+                           
+                           
+                            
+                            
+                            
+                           
+
+                <div class="clear_float"></div>
+            </ul>
+        </div>
+    </div>
+
+
 
     <div class="clear_float"></div>
 </div>

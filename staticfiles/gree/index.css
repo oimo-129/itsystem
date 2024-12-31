@@ -1,0 +1,6 @@
+.divider {
+    border: none; /* 移除默认边框 */
+    border-top: 1px solid #e0e0e0; /* 设置浅灰色边框 */
+    margin:  0; /* 设置上下外边距 */
+}
+

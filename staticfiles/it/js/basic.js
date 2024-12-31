@@ -52,30 +52,41 @@ $("#2code").hover(
         $(".code_box").hide()
     }
 );
+//其他共享文件下拉列表
+$("#academy_box1").hover(
+    function () {
+        $(".nav2_list4").css("display", "block").animate({height: "92px"}, 0);
+    }, function () {
+        $(".nav2_list4").animate({height: "0"}, 1).css("display", "none");
+    });
+//情报研究下拉列表
 $("#academy_box").hover(
     function () {
-        $(".nav2_list").css("display", "block").animate({height: "90px"}, 0);
+        $(".nav2_list").css("display", "block").animate({height: "184px"}, 0);
     }, function () {
         $(".nav2_list").animate({height: "0"}, 1).css("display", "none");
     });
-$("#service_box").hover(
+//新品月报下拉列表
+$("#service_box2").hover(
     function () {
-        $(".nav2_list2").css("display", "block").animate({height: "180px"}, 0);
+        $(".nav2_list123").css("display", "block").animate({height: "314px"}, 0);
     }, function () {
-        $(".nav2_list2").animate({height: "0"}, 1).css("display", "none");
+        $(".nav2_list123").animate({height: "0"}, 1).css("display", "none");
 });
+
+//用户体验下拉列表
 $("#service_box1").hover(
     function () {
-        $(".nav2_list12").css("display", "block").animate({height: "358px"}, 0);
+        $(".nav2_list12").css("display", "block").animate({height: "314px"}, 0);
     }, function () {
         $(".nav2_list12").animate({height: "0"}, 1).css("display", "none");
 });
-
+//产品线下拉列表
 $("#nav_group").hover(
     function () {
-        $(".nav2_list").css("display", "block").animate({height: "314px"}, 0);
+        $(".nav2_list1").css("display", "block").animate({height: "314px"}, 0);
     }, function () {
-        $(".nav2_list").animate({height: "0"}, 1).css("display", "none");
+        $(".nav2_list1").animate({height: "0"}, 1).css("display", "none");
     });
 
 $.fn.smartFloat = function() {

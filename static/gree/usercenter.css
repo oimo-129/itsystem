@@ -1,0 +1,93 @@
+
+
+
+
+.alert {  
+    padding: 15px;  
+    margin-bottom: 20px;  
+    border: 1px solid transparent;  
+    border-radius: 4px;  
+}  
+
+.alert-success {  
+    color: #3c763d;  
+    background-color: #dff0d8;  
+    border-color: #d6e9c6;  
+}  
+
+.alert-danger {  
+    color: #a94442;  
+    background-color: #f2dede;  
+    border-color: #ebccd1;  
+}  
+
+.error-tips123 {  
+    color: #a94442;  
+    display: block;  
+    margin-top: 5px;  
+    font-size: 12px;  
+}  
+
+
+.error-tips123 {  
+    margin-left: 10px;  
+    font-size: 14px;  
+    transition: all 0.3s ease;  
+}  
+
+.error-tips123.success {  
+    color: green;  
+}  
+
+.error-tips123.error {  
+    color: red;  
+}  
+
+
+
+
+#contact:hover
+{
+    color:blue;
+}
+
+
+
+
+.my-swal {  
+    font-family: 'Arial', sans-serif;  
+}  
+
+.my-swal-popup {  
+    background-color: #f8f8f8;  
+    border-radius: 10px;  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+}  
+
+.my-swal-header {  
+    background-color: #007bff;  
+    color: #fff;  
+    padding: 20px;  
+    border-top-left-radius: 10px;  
+    border-top-right-radius: 10px;  
+}  
+
+.my-swal-title {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+.my-swal-content {  
+    padding: 20px;  
+    font-size: 16px;  
+}  
+
+.my-swal-confirm-button {  
+    background-color: #007bff;  
+    color: #fff;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    font-size: 16px;  
+    cursor: pointer;  
+}
