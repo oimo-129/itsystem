@@ -62,15 +62,25 @@ class File1Model(models.Model):
 
 
 
+'''
+产品类别表
+'''
+
+class ProductCategory(models.Model):
+    name = models.CharField(max_length=50, verbose_name='产品类别')
+
+    class Meta:
+        verbose_name = '产品类别'
+        verbose_name_plural = '产品类别'
+
+    def __str__(self):
+        return self.name
 
 
 
 '''
 产品线页面的资源文件
-
 '''
-
-
 class FileModel(models.Model):
     name = models.CharField(max_length=50, verbose_name='文件名')
     file = models.FileField(upload_to=upload_to, verbose_name='上传文件', null=True)
@@ -81,7 +91,7 @@ class FileModel(models.Model):
                                           ('用户调研', '用户调研'),
                                           ('院内报告', '院内报告'))
                                  )
-    file_product = models.CharField(verbose_name='文件所属产品类型', max_length=20, null=True, blank=True)
+    file_product = models.ForeignKey(ProductCategory, on_delete=models.SET_NULL, null=True, blank=True, verbose_name='文件所属产品类型')
     add_time = models.DateTimeField(default=timezone.now, verbose_name='报告时间')
     cover = models.ImageField(upload_to='covers/%Y/%m/%d', verbose_name='文件封面', default='default/default.png')
 

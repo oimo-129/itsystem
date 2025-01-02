@@ -1,0 +1,122 @@
+.btn1 {  
+    background-color: #1e75cf;
+    color: #fff!important;
+}
+.content_list_title_231 a::before {  
+        content: "📄";  
+}  
+.toast-info {  
+    background-color: #105CB3 !important; /* 设置背景颜色为蓝色 */  
+    color: white; /* 设置文本颜色为白色，以便在蓝色背景上可读 */  
+}
+/* .search-form {  
+display: flex;  
+align-items: center;  
+}   */
+
+.search-result-info {  
+margin: 10px 0;  
+padding: 10px;  
+background-color: #f5f5f5;  
+border-radius: 4px;  
+}  
+
+/* 如果没有搜索结果 */  
+.no-results {  
+text-align: center;  
+padding: 20px;  
+background-color: #f5f5f5;  
+margin: 20px 0;  
+border-radius: 4px;  
+}  
+    
+
+
+
+
+
+/* 在你的 CSS 文件中添加 */  
+.date-form input[type="date"] {  
+    padding: 2px;  
+    border: 1px solid #ccc;  
+    border-radius: 4px;  
+    cursor: pointer;  
+}  
+
+.date-filter-info {  
+    margin: 10px 0;  
+    padding: 5px 10px;  
+    background-color: #f5f5f5;  
+    border-radius: 4px;  
+    font-size: 14px;  
+}  
+
+
+
+
+#contact:hover
+{
+    color:blue;
+}
+
+
+
+
+.my-swal {  
+    font-family: 'Arial', sans-serif;  
+}  
+
+.my-swal-popup {  
+    background-color: #f8f8f8;  
+    border-radius: 10px;  
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);  
+}  
+
+.my-swal-header {  
+    background-color: #007bff;  
+    color: #fff;  
+    padding: 20px;  
+    border-top-left-radius: 10px;  
+    border-top-right-radius: 10px;  
+}  
+
+.my-swal-title {  
+    font-size: 24px;  
+    font-weight: bold;  
+}  
+
+.my-swal-content {  
+    padding: 20px;  
+    font-size: 16px;  
+}  
+
+.my-swal-confirm-button {  
+    background-color: #007bff;  
+    color: #fff;  
+    border: none;  
+    padding: 10px 20px;  
+    border-radius: 5px;  
+    font-size: 16px;  
+    cursor: pointer;  
+}
+
+
+
+.highlight {
+    animation: highlightAnimation 3s ease-in-out;
+}
+
+@keyframes highlightAnimation {
+    0% {
+        background-color: transparent;
+    }
+    20% {
+        background-color: rgba(255, 255, 0, 0.3);
+    }
+    80% {
+        background-color: rgba(255, 255, 0, 0.3);
+    }
+    100% {
+        background-color: transparent;
+    }
+}

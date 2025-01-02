@@ -45,13 +45,14 @@
   margin: 20px 6px 0 20px;
 }
 .search_title_23 a:hover {
-  background: #1e75cf;;
+  background: #1e75cf;
   color: #fff;
 }
 .search_title_23 a.on {
   background: #1e75cf;
   color: #fff;
 }
+
 
 .chart-vd {
   position: relative;
@@ -155,7 +156,7 @@
   line-height: 40px;
   padding: 0 20px 0 15px;
   position: absolute;
-  right: -34px;
+  right: -15px;
   top: 0;
   border: 0;
   z-index: 30;
@@ -349,6 +350,7 @@
 }
 .content_list_font_232 b {
   font-weight: normal;
+  width: 95%;
   font-size: 12px;
   color: #999;
   padding: 0 0 10px 18px;
@@ -404,7 +406,7 @@
   background: #ed6d33;
 }
 .content_list_img_23 a b {
-  width: 90%;
+  width: 90%!;
   position: absolute;
   left: 5%;
   top: 84px;
@@ -521,4 +523,20 @@
 .content_list_tips_234 a:hover {
   background: #e56a34;
   color: #fff;
+}
+
+/* date-form */
+.date-form input[type="date"] {
+  width: 150px;
+  height: 30px;
+  padding: 5px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#kkpager a, #kkpager span {
+  padding: 15px 10px 15px 10px;
+  line-height: 7px;
+  border-radius: 4px;
 }

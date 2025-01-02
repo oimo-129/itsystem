@@ -79,7 +79,7 @@ class InfoView(LoginRequiredMixin,View):
         files = files.order_by('-id')  
          
          #每页显示数量
-        page_size = 6
+        page_size = 9
         paginator = Paginator(files, page_size)
         page = request.GET.get('page', 1)
 

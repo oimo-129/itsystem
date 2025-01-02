@@ -6,16 +6,12 @@
     <title>{% block title %}主界面 {%  endblock %}</title>
   
     <script src="{% static 'gree/jquery-1.11.3.min.js' %}"></script>
-    {% comment %} <script src="{% static 'it/js/common.js' %}" type="text/javascript"></script> {% endcomment %}
     <link rel="stylesheet" href="{% static 'it/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'it/css/basic.css' %}">
-    {% comment %} <link rel="stylesheet" href="{% static 'it/css/flexslider.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'it/css/footer.css' %}">
     <script src="{% static 'it/js/slide_palace_treasury.js' %}"></script>
-    {% comment %} <link rel="stylesheet" href="{% static 'it/css/special_topic.css' %}"> {% endcomment %}
     <link rel="stylesheet" href="{% static 'it/css/special_transverse.css' %}">
     <script src="{% static 'it/js/special_transverse.js' %}"></script>
-    <!-- boot4导航栏所需图标 -->
     <link rel="stylesheet" href="{% static 'it/plugins/bootstrap/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'it/plugins/themify-icons/themify-icons.css' %}">
     <link rel="icon" href="{% static 'img_add/favicon.ico' %}" type="image" />
@@ -23,19 +19,14 @@
     <!--新建弹窗需要的文件-->
     <link rel="stylesheet" href="{% static 'plugin/sweetalert2.min.css' %}">
     <script src="{% static 'plugin/sweetalert2.min.js' %}"></script>
-
- 
     <!--将自定义样式放进base.css-->
     <link rel="stylesheet" href="{% static 'gree/base.css' %}">
-
     <!-- toastr的配置目录引入 -->  
     <link rel="stylesheet" href="{% static 'plugin/toastr/toastr.min.css' %}">  
     <script src="{% static 'plugin/toastr/toastr.min.js' %}"></script>
-
 <!--添加自定义的样式-->
     {% block custom %}
     {% endblock %}
-
 </head>
 
 
@@ -95,7 +86,149 @@
     </div>
 
 
+ <!-- 学它的布局，将它的布局重新编排 -->
+ <div class="nav bg-cover " id="nav1">
+    <div class="nav_inbox">
+        <div class="col-lg-8 text-center mx-auto">
+            <h2 style="margin-top: 20px; margin-left: 15px; color: white;">格力家电一院情报系统</h2>
+
+            <div class="position-relative" id="search_div">
+
+                <div class="row">
+
+
+                    <div>
+                        <img src="{% static 'it/images/fire.svg' %}" id="fire_img">
+                        <span style="color:white;">热门：</span>
+                    </div>
+
+                    <ul class="list-inline" style="margin-top: 29px;">
+
+                        <div class="list-inline-item ">
+                            <input type="checkbox" id="checkbox" class="checkbox" />
+                            <label style="color:white;">电风扇 </label>
+                        </div>
+
+                        <div class="list-inline-item ">
+                            <input type="checkbox" id="checkbox" class="checkbox" />
+                            <label style="color:white;">电暖气 </label>
+                        </div>
+
+                        <div class="list-inline-item ">
+                            <input type="checkbox" id="checkbox" class="checkbox" />
+                            <label style="color:white;">净水机 </label>
+                        </div>
+
+                        <div class="list-inline-item ">
+                            <input type="checkbox" id="checkbox" class="checkbox" />
+                            <label style="color:white;">厨房小电 </label>
+                        </div>
+
+                        <div class="list-inline-item ">
+                            <input type="checkbox" id="checkbox" class="checkbox" />
+                            <label style="color: white;">清洁电器 </label>
+                        </div>
+
+                    </ul>
+
+
+                </div>
+              
+                <form id="searchForm" action="{% url 'info:infolist' %}" method="get" class="search-form">  
+                    <div class="search-container">  
+                        <input id="search"   
+                               name="keyword"   
+                               class="form-control"   
+                               placeholder="请输入要查找的内容"  
+                               required>  
+                        <button type="submit" class="search-button">  
+                            <i class="ti-search search-icon" style="margin-top: 80px;"></i>  
+                        </button>  
+                    </div>  
+                </form>  
+            </div>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+
+<!--其他的暂时先去掉，只保留研究报告-->
+<div class="nav2">
+    <ul>
+        <li><a class="act2" href="{% url 'home' %}">首页</a></li>
+        <li id="academy_box">
+            <a href="{% url 'info:infolist' %}" target="_blank" id="academy">
+                <span style="margin-right: 15px;">市场报告</span>
+                <div style="right: 15px;"></div>
+            </a>
+            <div class="nav2_list" id="service_list">
+                <div><a href="#" target="_blank">全部资料</a></div>
+                <div><a href="#" target="_blank">产品洞察</a></div>
+                <div><a href="#" target="_blank">行业研究</a></div>
+                <div><a href="#" target="_blank">用户调研</a></div>
+            </div>
+        </li> 
+        <li id="service_box2">
+            <a href="#" target="_blank" id="academy">
+                <span style="margin-right: 15px;">新品月报</span>
+                <div style="right: 15px;"></div>
+            </a>
+            <div class="nav2_list123" id="monthly_list">
+                <div><a href="#" target="_blank">全部资料</a></div>
+                <div><a href="#" target="_blank">电风扇</a></div>
+                <div><a href="#" target="_blank">电暖器</a></div>
+                <div><a href="#" target="_blank">净水机</a></div>
+                <div><a href="#" target="_blank">厨房小电</a></div>
+                <div><a href="#" target="_blank">清洁电器</a></div>
+                <div><a href="#" target="_blank">其他产品</a></div>
+            </div>
+        </li>
+
+        <li id="service_box1">
+            <a href="#" target="_blank" id="academy">
+                <span style="margin-right: 15px;">用户体验</span>
+                <div style="right: 15px;"></div>
+            </a>
+            <div class="nav2_list12" id="service_list">
+                <div><a href="#" target="_blank">全部资料</a></div>
+                <div><a href="#" target="_blank">电风扇</a></div>
+                <div><a href="#" target="_blank">电暖器</a></div>
+                <div><a href="#" target="_blank">净水机</a></div>
+                <div><a href="#" target="_blank">厨房小电</a></div>
+                <div><a href="#" target="_blank">清洁电器</a></div>
+                <div><a href="#" target="_blank">其他产品</a></div>
+            </div>
+        </li>
+        <li id="nav_group">
+            <a href="#" target="_blank" id="academy">
+                <span style="margin-right: 5px;">产品线</span>
+                <div style="right: 10px;"></div>
+            </a>
+            <div class="nav2_list1" id="service_list">
+                <div><a href="#" target="_blank">全部资料</a></div>
+                <div><a href="#" target="_blank">电风扇</a></div>
+                <div><a href="#" target="_blank">电暖器</a></div>
+                <div><a href="#" target="_blank">净水机</a></div>
+                <div><a href="#" target="_blank">厨房小电</a></div>
+                <div><a href="#" target="_blank">清洁电器</a></div>
+                <div><a href="#" target="_blank">其他产品</a></div>
+            </div>
+        </li>     
+        <li><a href="#">情报研究</a></li>
+        <li><a href="#">其他共享文件</a></li>
+    </ul>
+</div>
+<!--header-top end-->
+
 {% block content %}
+
+<!--这边添加新的内容方面-->
     
 {%  endblock %}
 
@@ -148,117 +281,24 @@
 
     <script type="text/javascript" src="{% static 'it/js/basic.js' %}"></script>
 
-    <script type="text/javascript" src="{% static 'it/js/submit_suggest.js' %}"></script>
-    <script src="{% static 'it/js/proposal-Submit.js' %}" type="text/javascript"></script>
-
-    <script src="{% static 'it/js/baidusearch.js' %}" type="text/javascript"></script>
-    <script type="text/javascript" src="{% static 'it/js/askciTongJi.js' %}"></script>
-    <script type="text/javascript">
-    </script>
-
+   
+    
     <script src="{% static 'it/js/jquery.common.js' %}"></script>
 
 
     <!-- 引入另外资源文件 -->
-    <!-- ** JS Plugins Needed for the Project ** -->
     <!-- jquiry -->
-    <script src="{% static 'it/plugins/jquery/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'js/jquery-1.12.4.js' %}"></script>
     <!-- Bootstrap JS -->
-    <script src="{% static 'it/plugins/bootstrap/bootstrap.min.js' %}"></script>
-    <!-- match-height JS -->
-    <script src="{% static 'it/plugins/match-height/jquery.matchHeight-min.js' %}"></script>
-    <!-- Main Script -->
-    <script src="{% static 'it/assets/script.js' %}"></script>
+    <script src="{% static 'boot_js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'gree/base.js' %}"></script>
 
-    <script>
-        function contact() {  
-            var currentScrollPosition = window.pageYOffset || document.documentElement.scrollTop;  
-            Swal.fire({  
-                title: '管理员',  
-                html: '<div style="text-align: center;">家电技术研究一院:胡芳<br><br>联系座机：29844</div>',  
-                icon: 'question',  
-                confirmButtonText: '确定',  
-                customClass: {  
-                    container: 'my-swal',  
-                    popup: 'my-swal-popup',  
-                    header: 'my-swal-header',  
-                    title: 'my-swal-title',  
-                    closeButton: 'my-swal-close-button',  
-                    image: 'my-swal-image',  
-                    content: 'my-swal-content',  
-                    input: 'my-swal-input',  
-                    actions: 'my-swal-actions',  
-                    confirmButton: 'my-swal-confirm-button',  
-                    cancelButton: 'my-swal-cancel-button',  
-                    footer: 'my-swal-footer'  
-                },
-                width: '400px'   
-            });  
-        }
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const userInfo = document.querySelector('.user-info');
-            const userNameSpan = document.querySelector('.span_uname');
-            const originalText = userNameSpan.textContent;
+    {% block js %}
+  
+  {% endblock %}
+  
+   
 
-            userInfo.addEventListener('mouseenter', function() {
-                userNameSpan.textContent = '用户中心';
-            });
-
-            userInfo.addEventListener('mouseleave', function() {
-                userNameSpan.textContent = originalText;
-            });
-        });
-    </script>
-
-
-<!-- 退出时进行退出询问操作 -->  
-<script>  
-    $(document).ready(function() {  
-        toastr.options = {  
-            "closeButton": true,  
-            "debug": false,  
-            "newestOnTop": false,  
-            "progressBar": false,  
-            "positionClass": "toast-top-center",  
-            "preventDuplicates": false,  
-            "onclick": null,  
-            "showDuration": "300",  
-            "hideDuration": "1000",  
-            "timeOut": "0",  
-            "extendedTimeOut": "0",  
-            "showEasing": "swing",  
-            "hideEasing": "linear",  
-            "showMethod": "fadeIn",  
-            "hideMethod": "fadeOut",  
-            "tapToDismiss": false  
-        };  
-    
-        $(document).on('click', '.logout-btn', function(e) {  
-            e.preventDefault();  
-            toastr.clear();  
-            
-            toastr.warning(  
-                '<div>确认退出登录吗？</div>' +  
-                '<div class="toast-buttons">' +  
-                '<button class="confirm-btn">确认</button>' +  
-                
-                '</div>',  
-                '',  
-                {  
-                    allowHtml: true  
-                }  
-            );  
-        });  
-    
-        $(document).on('click', '.confirm-btn', function() {  
-            window.location.href = "{% url 'logout' %}";  
-        });  
-    
-       
-    });
-    </script>  
 
 </body>
 

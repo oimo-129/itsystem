@@ -1,257 +1,15 @@
 {% extends 'base.html' %}
 {% block title  %} 首页 {% endblock %}
 {%  load static %}
-
 {% load custom_filters %}
-
+<!--添加自定义的样式-->
 {% block custom %}
-
+<link rel="stylesheet" href="{% static 'gree/index.css' %}">
 {% endblock %}
 
+
+
 {% block content %}
-    <!-- 搜索栏 -->
-
-    <!-- 学它的布局，将它的布局重新编排 -->
-    <div class="nav bg-cover " id="nav1">
-        <div class="nav_inbox">
-            <div class="col-lg-8 text-center mx-auto">
-                <h2 style="margin-top: 20px; margin-left: 15px; color: white;">格力家电一院情报系统</h2>
-
-                <div class="position-relative" id="search_div">
-
-                    <div class="row">
-
-
-                        <div>
-                            <img src="{% static 'it/images/fire.svg' %}" id="fire_img">
-                            <span style="color:white;">热门：</span>
-                        </div>
-
-                        <ul class="list-inline" style="margin-top: 29px;">
-
-                            <div class="list-inline-item ">
-                                <input type="checkbox" id="checkbox" class="checkbox" />
-                                <label style="color:white;">电风扇 </label>
-                            </div>
-
-                            <div class="list-inline-item ">
-                                <input type="checkbox" id="checkbox" class="checkbox" />
-                                <label style="color:white;">电暖气 </label>
-                            </div>
-
-                            <div class="list-inline-item ">
-                                <input type="checkbox" id="checkbox" class="checkbox" />
-                                <label style="color:white;">净水机 </label>
-                            </div>
-
-                            <div class="list-inline-item ">
-                                <input type="checkbox" id="checkbox" class="checkbox" />
-                                <label style="color:white;">厨房小电 </label>
-                            </div>
-
-                            <div class="list-inline-item ">
-                                <input type="checkbox" id="checkbox" class="checkbox" />
-                                <label style="color: white;">清洁电器 </label>
-                            </div>
-
-                        </ul>
-
-
-                    </div>
-                  
-                    <form id="searchForm" action="{% url 'info:infolist' %}" method="get" class="search-form">  
-                        <div class="search-container">  
-                            <input id="search"   
-                                   name="keyword"   
-                                   class="form-control"   
-                                   placeholder="请输入要查找的内容"  
-                                   required>  
-                            <button type="submit" class="search-button">  
-                                <i class="ti-search search-icon" style="margin-top: 80px;"></i>  
-                            </button>  
-                        </div>  
-                    </form>  
-                </div>
-            </div>
-
-
-        </div>
-
-
-    </div>
-
-
-
-
-
-
-
-
-<!--其他的暂时先去掉，只保留研究报告-->
-    <div class="nav2">
-        <ul>
-            <li><a class="act2" href="{% url 'home' %}">首页</a></li>
-
-            <li id="academy_box">
-                <a href="#" target="_blank" id="academy">
-                    <span style="margin-right: 15px;">市场报告</span>
-                    <div style="right: 15px;"></div>
-                </a>
-                <div class="nav2_list" id="service_list">
-                    <div><a href="#" target="_blank">全部资料</a></div>
-                    <div><a href="#" target="_blank">产品洞察</a></div>
-                    <div><a href="#" target="_blank">行业研究</a></div>
-                    <div><a href="#" target="_blank">用户调研</a></div>
-                </div>
-            </li>
-
-            
-            
-            <li id="service_box2">
-                <a href="#" target="_blank" id="academy">
-                    <span style="margin-right: 15px;">新品月报</span>
-                    <div style="right: 15px;"></div>
-                </a>
-                <div class="nav2_list123" id="monthly_list">
-                    <div><a href="#" target="_blank">全部资料</a></div>
-                    <div><a href="#" target="_blank">电风扇</a></div>
-                    <div><a href="#" target="_blank">电暖器</a></div>
-                    <div><a href="#" target="_blank">净水机</a></div>
-                    <div><a href="#" target="_blank">厨房小电</a></div>
-                    <div><a href="#" target="_blank">清洁电器</a></div>
-                    <div><a href="#" target="_blank">其他产品</a></div>
-                </div>
-            </li>
-
-            <li id="service_box1">
-                <a href="#" target="_blank" id="academy">
-                    <span style="margin-right: 15px;">用户体验</span>
-                    <div style="right: 15px;"></div>
-                </a>
-                <div class="nav2_list12" id="service_list">
-                    <div><a href="#" target="_blank">全部资料</a></div>
-                    <div><a href="#" target="_blank">电风扇</a></div>
-                    <div><a href="#" target="_blank">电暖器</a></div>
-                    <div><a href="#" target="_blank">净水机</a></div>
-                    <div><a href="#" target="_blank">厨房小电</a></div>
-                    <div><a href="#" target="_blank">清洁电器</a></div>
-                    <div><a href="#" target="_blank">其他产品</a></div>
-                </div>
-            </li>
-
-            <li id="nav_group">
-                <a href="#" target="_blank" id="academy">
-                    <span style="margin-right: 5px;">产品线</span>
-                    <div style="right: 10px;"></div>
-                </a>
-                <div class="nav2_list1" id="service_list">
-                    <div><a href="#" target="_blank">全部资料</a></div>
-                    <div><a href="#" target="_blank">电风扇</a></div>
-                    <div><a href="#" target="_blank">电暖器</a></div>
-                    <div><a href="#" target="_blank">净水机</a></div>
-                    <div><a href="#" target="_blank">厨房小电</a></div>
-                    <div><a href="#" target="_blank">清洁电器</a></div>
-                    <div><a href="#" target="_blank">其他产品</a></div>
-                </div>
-            </li>
-
-           
-            <li><a href="#">情报研究</a></li>
-            <li><a href="#">其他共享文件</a></li>
-          <!--  <li id="academy_box1" style="margin-left:10px;">
-                <a href="#" target="_blank" id="academy">
-                    <span style="margin-right: 15px;">其他共享文件</span>
-                    <div style="margin-left: 15px;"></div>
-                </a>
-                <div class="nav2_list4" id="service_list">
-                    <div><a href="#" target="_blank">全部资料</a></div>
-                    <div><a href="#" target="_blank">情报研究</a></div>
-                </div>
-            </li>
-          -->
-     
-        </ul>
-    </div>
-    <!--header-top end-->
-
-
-
-<!--轮播图的样式表，先放在这里面后处理 -->
-    <style>
-
-        .prev {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 100;
-        left:10px;
-        }
-        .prev:hover{
-        background-color: rgba(0, 0, 0, 0.8);
-            color: #fff;
-
-        }
-
-        .next{
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
-        z-index: 100;
-        right:10px;
-        }
-        .next:hover{
-        background-color: rgba(0, 0, 0, 0.8);
-        }
-
-
-        .slides {  
-            display: flex; /* 使用 flexbox 布局 */  
-            overflow: hidden; /* 隐藏超出部分 */  
-        }  
-
-        .slides li {  
-            list-style: none; /* 去掉默认的列表样式 */  
-            flex: 0 0 100%; /* 每个 li 占据 100% 的宽度 */  
-            position: relative; /* 为了定位标题 */  
-        }  
-
-        .slides img {  
-            width: 100%; /* 图片宽度占满容器 */  
-            display: block; /* 去掉图片底部的空白间隙 */  
-        }  
-
-        .img_title {  
-            position: absolute; /* 绝对定位标题 */  
-            width:30%;
-            
-            background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
-            color: #fff; /* 白色文字 */  
-            padding: 5px 10px; /* 内边距 */  
-            
-            font-size: 16px; /* 字体大小 */  
-            z-index: 1;
-        }
-        /* 使用更具体的选择器来提高优先级 */  
-        /* 针对 img_title 的 hover */  
-        a .img_title:hover,  
-        .img_title:hover {  
-        color: #2970b9; /* 鼠标悬浮时字体变红 */  
-        }  
-
-        
-    </style>
-
-
     <div class="content1" style="background-color：rgba(0, 0, 0, 0.8)">
 
 
@@ -301,51 +59,6 @@
 
 
 
-<script>
-    const slides = document.querySelectorAll('.slides li');  
-    let currentIndex = 0;  
-
-function showSlide(index) {  
-    slides.forEach((slide, i) => {  
-        slide.style.display = i === index ? 'block' : 'none';  
-    });  
-}  
-
-function nextSlide() {  
-    currentIndex = (currentIndex + 1) % slides.length;  
-    showSlide(currentIndex);  
-}  
-function preSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-}
-//鼠标放在轮播图上，停止轮播
-function stopSlide() {
-    
-    interVal=setInterval(nextSlide, 3000);
-    clearInterval(interVal);
-
-}
-
-// 初始化显示第一张图片  
-showSlide(currentIndex);  
-//开始轮播图
-function startSlide()
-{
-   interVal = setInterval(nextSlide, 3000);
-}
-//停止轮播图
-function stopSlide()
-{
-    clearInterval(interVal)
-}
-document.querySelector('.flexslider').addEventListener('mouseenter',stopSlide);
-document.querySelector('.flexslider').addEventListener('mouseleave',startSlide);
- 
-startSlide();
-</script>
-
-
 
 
 <!--添加展示功能-->
@@ -386,17 +99,10 @@ startSlide();
     </div>
 
 
-
-
-
-
 <input type="hidden" value="正常情况">
 
     </div>
 </div>
-
-
-
 
 
 <div class="content3 margin_bottom0 content2023">
@@ -507,90 +213,10 @@ startSlide();
 
 
 
-    <div class="content1 border1">
-
-        <div class="content_title">
-            <span>待补充</span>
-            <div class="line1"></div>
-        </div>
-    
-        <div class="hot_news">
-            <ul>
-                          
-                           
-                            <li class=" margin_left35  ">
-                                <div class="hot_news_img">
-                                    <a href="#  " target="_blank" title="#">
-                                        <img src="{% static 'img_add/default.png' %}" alt="#">
-                                    </a>
-                                </div>
-                                <div class="hot_news_title"><a href="#" target="_blank" title="#">待添加</a></div>
-                                <div class="hot_news_tips">
-                                    <img src="{% static 'img_add/tick4.png' %}" alt="">
-                                                <a href="#" target="_blank" title="#"></a>
-    
-    
-                                    <span>2024-12-13</span>
-                                </div>
-                            </li>
-    
-                <div class="clear_float"></div>
-            </ul>
-        </div>
-    
-    </div>
-    
 
     <script src="/static/it/js/jquery.flexslider-min.js"></script>
-
-
-    <script>
-        $(document).ready(function() {
-            $(".flexslider").flexslider({
-                animation: "fade", //有滑动的效果
-                controlNav: true, //是否显示小点点，false就不显示底部的导航了，也可以自己使用js隐藏。
-                directionNav: true, //是否显示左右箭头,还是可以使用js来隐藏
-                autoPlay: true,
-            });
-
-        });
-    </script>
-
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // 获取所有分页链接
-            const pageLinks = document.querySelectorAll('.more a');
-            
-            pageLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    
-                    // 获取目标页面URL
-                    const url = this.getAttribute('href');
-                    
-                    // 使用fetch获取新页面内容
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(html => {
-                            // 更新列表内容
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(html, 'text/html');
-                            
-                            // 更新文件列表内容
-                            const newContent = doc.querySelector('.listed-companies-content');
-                            document.querySelector('.listed-companies-content').innerHTML = newContent.innerHTML;
-                            
-                            // 更新分页链接
-                            const newMoreLink = doc.querySelector('.more a');
-                            document.querySelector('.more a').setAttribute('href', newMoreLink.getAttribute('href'));
-                            
-                            // 更新URL，但不刷新页面
-                            history.pushState(null, '', url);
-                        });
-                });
-            });
-        });
-        </script>
     
+{% endblock %}
+{% block js %}
+<script src="{% static 'gree/index.js' %}"></script>
 {% endblock %}

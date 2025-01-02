@@ -4,3 +4,73 @@
     margin:  0; /* 设置上下外边距 */
 }
 
+
+
+.prev {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    left:10px;
+    }
+    .prev:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+
+    }
+
+    .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100;
+    right:10px;
+    }
+    .next:hover{
+    background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+    .slides {  
+        display: flex; /* 使用 flexbox 布局 */  
+        overflow: hidden; /* 隐藏超出部分 */  
+    }  
+
+    .slides li {  
+        list-style: none; /* 去掉默认的列表样式 */  
+        flex: 0 0 100%; /* 每个 li 占据 100% 的宽度 */  
+        position: relative; /* 为了定位标题 */  
+    }  
+
+    .slides img {  
+        width: 100%; /* 图片宽度占满容器 */  
+        display: block; /* 去掉图片底部的空白间隙 */  
+    }  
+
+    .img_title {  
+        position: absolute; /* 绝对定位标题 */  
+        width:30%;
+        
+        background: rgba(0, 0, 0, 0.5); /* 半透明背景 */  
+        color: #fff; /* 白色文字 */  
+        padding: 5px 10px; /* 内边距 */  
+        
+        font-size: 16px; /* 字体大小 */  
+        z-index: 1;
+    }
+    /* 使用更具体的选择器来提高优先级 */  
+    /* 针对 img_title 的 hover */  
+    a .img_title:hover,  
+    .img_title:hover {  
+    color: #2970b9; /* 鼠标悬浮时字体变红 */  
+    }  
